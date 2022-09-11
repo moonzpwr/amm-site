@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/amm-site/static/css/main.8a685450.css",
+    "main.js": "/amm-site/static/js/main.be40a71b.js",
+    "index.html": "/amm-site/index.html",
+    "main.8a685450.css.map": "/amm-site/static/css/main.8a685450.css.map",
+    "main.be40a71b.js.map": "/amm-site/static/js/main.be40a71b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a685450.css",
+    "static/js/main.be40a71b.js"
+  ]
+}
