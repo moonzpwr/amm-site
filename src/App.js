@@ -1,22 +1,26 @@
 import { Suspense } from "react";
 import Loader from "./helpers/components/Loader/Loader";
-import {useTranslation} from 'react-i18next';
 import Layout from './helpers/components/Layout/Layout'
-import './utils/i18next'
+import Header from "./components/Header/Header";
+import Hero from "components/Hero/Hero";
+import WhoAreWe from "components/WhoAreWe/WhoAreWe";
+import Features from "components/Features/Features";
+import OurProducts from "components/OurProducts/OurProducts"; 
+import Calculator from "components/Calculator/Calculator";
+import WorkProcess from "components/WorkProcess/WorkProcess";
 
 function App() {
-  const {t, i18n} = useTranslation();
-  const handleChangeLanguage = (lang) => {
-    i18n.changeLanguage(lang)
-  }
+
   return (
     <Suspense fallback={<Loader/>}>
       <Layout>
-        <div>
-          {t("title.title")}
-          <button onClick={() => handleChangeLanguage('ua')}>ua</button>
-          <button onClick={() => handleChangeLanguage('en')}>en</button>
-        </div>
+        <Header/>
+        <Hero/>
+        <WhoAreWe/>
+        <Features/>
+        <OurProducts/>
+        <Calculator/>
+        <WorkProcess/>
       </Layout>
     </Suspense>
   );

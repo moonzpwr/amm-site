@@ -20,7 +20,7 @@ i18n
     resources,
     fallbackLng: 'en',
     whitelist: ['en', 'ua'],
-    debug: true,
+    debug: false,
     detection: {
       order: ['localStorage', 'cookie'],
       caches: ['localStorage', 'cookie'],
