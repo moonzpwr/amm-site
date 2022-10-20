@@ -31,31 +31,46 @@ function Calculator() {
 
   useEffect(() => {
     if (subTypeOfContent === subTypeOfContentConst.tiktokVideo) {
-      setPrice(1000)
+      setPrice({value: 1000, label: null})
     }
     setFinalprice(factors.reduce((acc, factor) => {
       acc += (Number(factor.value.slice(0, 3)) * price.value) - price.value
       return acc
     }, price.value))
-  }, [subTypeOfContent, price, factors])
+  }, [subTypeOfContent, price.value, factors])
 
   const handleContentTypeClick = (e) => {
     setTypeOfContent(e.target.value);
     setSubTypeOfContent(null);
     setFactors([]);
+    setIsCalculated(false)
   }
 
   const handleSubTypeOfContentChange = (e) => {
     setSubTypeOfContent(e.value);
     setFactors([]);
+    setIsCalculated(false);
   }
 
   const handleCalculatedIfValid = () => {
-    if (subTypeOfContent && price.label && finalPrice !== 0) {
-      setIsCalculated(true);
-    };
-    alert('заполни поля');//TODO: implement error state of fields
-    return
+    if (subTypeOfContent === subTypeOfContentConst.tiktokVideo) {
+      if (subTypeOfContent && finalPrice !== 0) {
+          setIsCalculated(true);
+          window.scrollBy({left: 0,  top: 200, behavior: 'smooth'})
+      } else {
+        alert('заполни поля');//TODO: implement error state of fields
+        return
+        }
+    } else {
+      if (subTypeOfContent && price.label && finalPrice !== 0) {
+        setIsCalculated(true);
+        window.scrollBy({left: 0,  top: 200, behavior: 'smooth'})
+      } else {
+        alert('заполни поля');//TODO: implement error state of fields
+        return
+      }
+    }
+    
   }
   
   return (
@@ -79,18 +94,18 @@ function Calculator() {
         </div>
         <div className={s.formTitle}>{t('calculator.form')}</div>
         {typeOfContent === 'video' &&
-          <Select styles={customStyles} options={videoSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
+          <Select isSearchable={false} styles={customStyles} options={videoSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
         }
         {typeOfContent === 'animation' &&
-          <Select styles={customStyles} options={animationSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
+          <Select isSearchable={false} styles={customStyles} options={animationSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
         }
         {subTypeOfContent !== subTypeOfContentConst.tiktokVideo &&
           Object.values(subTypeOfContentConst).map((type, i) => { 
             return type === subTypeOfContent ? 
-              <>
+              <div key={i}>
                 <div className={s.formTitle}>{t('calculator.duration')}</div>
-                <Select key={i} styles={customStyles} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} onChange={(e) => setPrice(e)} />
-              </>
+                <Select isSearchable={false} styles={customStyles} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} onChange={(e) => setPrice(e)} />
+              </div>
               : 
               ''
           })
@@ -98,10 +113,10 @@ function Calculator() {
         {subTypeOfContent &&
           Object.values(subTypeOfContentConst).map((type, i) => { 
             return type === subTypeOfContent ? 
-              <>
+              <div key={i}>
                 <div className={s.formTitle}>{t('calculator.options')}</div>
                 <Select
-                  key={i}
+                  isSearchable={false}
                   styles={customStyles}
                   options={get(importantOptions, subTypeOfContent)}
                   isMulti
@@ -110,7 +125,7 @@ function Calculator() {
                   value={factors}
                   onChange={(e) => setFactors(e)}
                 />
-              </>
+              </div>
               : 
               ''
           })
@@ -122,7 +137,7 @@ function Calculator() {
         </button>
       }
       {isCalculated && <div className={s.calculatedBlock}>
-        <div className={s.finalPrice}>$ {finalPrice}</div>
+        <div className={s.finalPrice}>$ {Math.round(finalPrice / 100) * 100}</div>
         <div className={s.disclaimerTitle}>{t('calculator.disclaimerTitle')}</div>
         <div className={s.videoOptionsContainer}>
           <p>
@@ -139,7 +154,7 @@ function Calculator() {
           </p>
           <p>
             <span className={s.videoOptionsTitle}>{t('calculator.options')}:</span>
-            <p className={s.optionsValues}>{factors.map((factor) => <span>{factor.label}</span>)}</p>
+            <span className={s.optionsValues}>{factors.map((factor, i) => <span key={i}>{factor.label}</span>)}</span>
           </p>
         </div>
         <div className={s.videoDisclaimer}>{t('calculator.disclaimer')}</div>

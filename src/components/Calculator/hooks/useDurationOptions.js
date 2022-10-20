@@ -80,9 +80,9 @@ export function useDurationOptions()  {
   ];
 
   const youtubeVideoDurationOptions = [
-    {value: 600, label: `4 ${t('calculator.video')}`},
-    {value: 800, label: `6 ${t('calculator.video')}`},
-    {value: 1000, label: `8 ${t('calculator.video')}`},
+    {value: 800, label: `4 ${t('calculator.video')}`},
+    {value: 1200, label: `6 ${t('calculator.video')}`},
+    {value: 1400, label: `8 ${t('calculator.video')}`},
   ]
 
   return {
