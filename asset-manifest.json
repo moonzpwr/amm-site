@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/amm-site/static/css/main.a5abddd7.css",
-    "main.js": "/amm-site/static/js/main.6628344a.js",
+    "main.js": "/amm-site/static/js/main.3fbcf697.js",
     "static/media/Roboto-Bold.svg": "/amm-site/static/media/Roboto-Bold.5208623a4149740a754d.svg",
     "static/media/Roboto-Regular.svg": "/amm-site/static/media/Roboto-Regular.d06c319f8cca70176d6b.svg",
     "static/media/Roboto-Regular.eot": "/amm-site/static/media/Roboto-Regular.4be1a2207d30e04db979.eot",
@@ -31,10 +31,10 @@
     "static/media/arrowRightUpIcon.svg": "/amm-site/static/media/arrowRightUpIcon.9ec683e1763d71097914d882dbd3022f.svg",
     "static/media/playIcon.svg": "/amm-site/static/media/playIcon.eeeb29f8099220881831f4864ccb6fcf.svg",
     "main.a5abddd7.css.map": "/amm-site/static/css/main.a5abddd7.css.map",
-    "main.6628344a.js.map": "/amm-site/static/js/main.6628344a.js.map"
+    "main.3fbcf697.js.map": "/amm-site/static/js/main.3fbcf697.js.map"
   },
   "entrypoints": [
     "static/css/main.a5abddd7.css",
-    "static/js/main.6628344a.js"
+    "static/js/main.3fbcf697.js"
   ]
 }
