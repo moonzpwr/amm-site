@@ -157,7 +157,7 @@
       "secondItem": "Briefing"
     },
     "second": {
-      "title:": "Creative strategy",
+      "title": "Creative strategy",
       "firstItem": "Video strategy",
       "secondItem": "Formation of an idea",
       "thirdItem": "Creation of a script",
@@ -178,5 +178,39 @@
       "fifthItem": "2D and 3D animation",
       "sixthItem": "Rendering"
     }
-  }
+  },
+  "caseStudies": {
+    "title": "Case studies",
+    "description": "We chose the yummiest works from our portfolio. Would you like to see more?",
+    "link": "Click on the link",
+    "need": "Need:",
+    "result": "Result:",
+    "firstCard": {
+      "title": "2D explainer",
+      "need": "Create an explainer to break down the product into simple language and deliver value of the products, assessment to the customer.",
+      "result": "As a result, more credibility is established and the customer has fewer objections. After the creation of these products, managers communicated information using this video, and the customer perceived the value of the offer more easily."
+    },
+    "secondCard": {
+      "title": "3D animation",
+      "need": "The owner wanted to visually present the object to accelerate decision-making and sales even before the end of construction works.",
+      "result": "Sales increased by 40%. The video presentation stirred the interest of 80% of new potential buyers, 50% of whom made a decision to buy a home."
+    },
+    "thirdCard": {
+      "title": "3D-motion presentation",
+      "need": "To make a presentation video – a countdown of an architectural project of a hospital for investors in order to retain the attention and preserve the trust and investment of the company.",
+      "result": "100% positive feedback from customers and investors at a private screening."
+    }
+  },
+  "contactForm": {
+    "title": "Any more remaining questions?",
+    "description": "Send us your contact details and let us help you."
+  },
+  "clients": {
+    "title": "Clients",
+    "clutch": "Read on Clutch why clients prefer us"
+  },
+  "footer": {
+    "rights": "© 2022 AMM Production. All Rights Reserved." 
+  },
+  "loader": "Now loading..."
 }

@@ -12,10 +12,9 @@ export const useStyles = makeStyles({
     position: 'absolute',
     top: 0,
     left: 0,
-    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    animation: '$labelFadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
   },
   label: {
-    transform: 'rotate(-2deg)',
     padding: '4px 12px',
     fontFamily: 'Furore, sans-serif',
     fontWeight: 400,
@@ -27,9 +26,21 @@ export const useStyles = makeStyles({
     color: COLORS.BLACK.PRIMARY,
     backgroundColor: COLORS.WHITE,
   },
+  labelAnimation: {
+    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    animationDelay: '0.5s',
+  },
+  titleAnimation: {
+    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    animationDelay: '1s',
+  },
   '@keyframes fadeIn': {
     from: { transform: 'scale(0.5)', opacity: 0 },
-    to: { transform: 'scale(1)', opacity: 1 },
+    to: { transform: 'scale(1)', opacity: 1, },
+  },
+  '@keyframes labelFadeIn': {
+    from: { transform: 'scale(0.5)', opacity: 0 },
+    to: { transform: 'scale(1) rotate(-2deg)', opacity: 1, },
   },
   title: {
     fontFamily: 'Furore',

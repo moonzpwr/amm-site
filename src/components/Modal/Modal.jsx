@@ -19,8 +19,8 @@ function Modal({isModalOpen, setIsModalOpen}) {
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
-    setIsSubmited(true);
-    console.log({name, phone, email});
+    setIsSubmited(true);//TODO: implement validation
+    console.log({name, phone, email});//TODO: implement email
   }
  
   return (
@@ -51,7 +51,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
                 </label>
                 <label>
                   <span>{ t("contactModal.phoneNumber") }</span>
-                  <input type="text" className={s.contactInput} name='phone' value={phone} onChange={(e) => setPhone(e.target.value)}/>
+                  <input type="number" className={s.contactInput} name='phone' value={phone} onChange={(e) => setPhone(e.target.value)}/>
                 </label>
                 <label>
                   <span>{ t("contactModal.email") }</span>

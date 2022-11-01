@@ -16,7 +16,7 @@ export const useStyles = makeStyles({
   },
   label: {
     display: 'block',
-    width: 100,
+    width: 125,
     margin: '7px auto 23px auto',
     fontFamily: 'Furore, sans-serif',
     fontWeight: 400,
@@ -27,7 +27,22 @@ export const useStyles = makeStyles({
     color: COLORS.BLACK.PRIMARY,
     backgroundColor: COLORS.WHITE,
     padding: '4px 12px',
-    transform: 'rotate(-2deg)',
+  },
+  labelAnimation: {
+    animation: '$labelFadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    animationDelay: '1s',
+  },
+  titleAnimation: {
+    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    animationDelay: '0.5s',
+  },
+  '@keyframes fadeIn': {
+    from: { transform: 'scale(0.5)', opacity: 0 },
+    to: { transform: 'scale(1)', opacity: 1 },
+  },
+  '@keyframes labelFadeIn': {
+    from: { transform: 'scale(0.5)', opacity: 0 },
+    to: { transform: 'scale(1) rotate(-2deg)', opacity: 1 },
   },
   describe: {
     fontFamily: 'Roboto, sans-serif',

@@ -8,10 +8,10 @@ export const useStyles = makeStyles({
     margin: '0 auto',
     backgroundColor: COLORS.BLACK.PRIMARY,
     color: COLORS.WHITE,
-    overflow: 'hidden',
+    paddingTop: 110,
     
-    [BREAKPOINTS.DESKTOP] : {
-      maxWidth: 1440,
+    [BREAKPOINTS.DESKTOP]: {
+      maxWidth: 1170,
     }
   },
 });

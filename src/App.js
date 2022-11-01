@@ -8,6 +8,10 @@ import Features from "components/Features/Features";
 import OurProducts from "components/OurProducts/OurProducts"; 
 import Calculator from "components/Calculator/Calculator";
 import WorkProcess from "components/WorkProcess/WorkProcess";
+import Case from "components/Case/Case";
+import ContactForm from "components/ContactForm/ContactForm";
+import Clients from "components/Clients/Clients";
+import Footer from "components/Footer/Footer";
 
 function App() {
 
@@ -21,7 +25,11 @@ function App() {
         <OurProducts/>
         <Calculator/>
         <WorkProcess/>
+        <Case/>
+        <ContactForm/>
+        <Clients/>
       </Layout>
+      <Footer/>
     </Suspense>
   );
 }

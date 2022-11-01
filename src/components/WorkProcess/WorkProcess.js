@@ -15,7 +15,7 @@ function WorkProcess() {
 
   return (
     <div className={s.root}>
-      <h2>{t('workProcess.title')}</h2>
+      <h2 className={s.title}>{t('workProcess.title')}</h2>
       <div className={s.cardsContainer}>
         <div className={s.cardsItem}>
           <img src={imageOne} alt='number one' className={s.cardsNumberImg}/>

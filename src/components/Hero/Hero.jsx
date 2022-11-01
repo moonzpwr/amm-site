@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'utils/i18next';
 import Modal from 'components/Modal/Modal';
+import Marquee from "react-fast-marquee";
 
 function Hero() {
   const s = useStyles();
@@ -11,6 +12,8 @@ function Hero() {
 
   return (
     <div className={s.root}>
+      <div className={s.elipse}></div>
+      <div className={s.eclipseTwo}></div>
       <div className={s.titleContainer}>
         <div className={s.name}>{t('title.name')}</div>
         <div className={s.title}>{t('title.title')}</div>
@@ -20,8 +23,12 @@ function Hero() {
         {t('title.mainBtn')}
       </button>
       <div className={s.ribbonContainer}>
-        <div className={s.blackRibbon}>{t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}</div>
-        <div className={s.whiteRibbon}>{t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}</div>
+        <Marquee className={s.blackRibbon} gradient={false}>
+          {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}
+        </Marquee>
+        <Marquee className={s.whiteRibbon} direction='right' gradient={false}>
+          {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}
+        </Marquee> 
       </div>
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>

@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
 export const useStyles = makeStyles({
@@ -14,10 +14,19 @@ export const useStyles = makeStyles({
     right: 0,
     backgroundColor: COLORS.BLACK.PRIMARY,
     zIndex: 8,
+
+    [BREAKPOINTS.DESKTOP]: {
+      padding: '12px 24px',
+    }
   },
   logo: {
     width: 102,
     height: 56,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 128,
+      height: 76,
+    }
   },
   menuBtn: {
     position: 'absolute',
@@ -26,6 +35,10 @@ export const useStyles = makeStyles({
     padding: 0,
     backgroundColor: 'transparent',
     border: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'none',
+    }
   },
   mobileMenu: {
     position: 'fixed',
@@ -38,6 +51,15 @@ export const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  desctopMenu: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'flex',
+      marginLeft: 172,
+
+    }
   },
   myNodeEnter: {
     opacity: 0,
@@ -62,7 +84,6 @@ export const useStyles = makeStyles({
   },
   menuList: {
     margin: '130px 0',
-
     gap: 32,
   },
   menuItem: {
@@ -86,13 +107,21 @@ export const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     marginBottom: 132,
+
     '& svg': {
       marginLeft: 10,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      marginBottom: 0,
     }
   },
   btnContainer: {
     display: 'flex',
-    
+
+    [BREAKPOINTS.DESKTOP]: {
+      marginRight: 96,
+    }
   },
   separator: {
     margin: '0 10px',
@@ -121,6 +150,15 @@ export const useStyles = makeStyles({
     border: 'none',
     padding: 0,
     backgroundColor: 'transparent'
+  },
+  desctopMenuList: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'flex',
+      gap: 32,
+      marginRight: 96,
+    }
   },
 });
 

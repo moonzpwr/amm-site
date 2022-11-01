@@ -18,6 +18,18 @@ export const useStyles = makeStyles({
     letterSpacing: '0.07em',
     margin: '0 0 20px 0',
   },
+  descriptionAnimation: {
+    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    animationDelay: '1s',
+  },
+  titleAnimation: {
+    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+    animationDelay: '0.5s',
+  },
+  '@keyframes fadeIn': {
+    from: { transform: 'scale(0.5)', opacity: 0 },
+    to: { transform: 'scale(1)', opacity: 1 },
+  },
   description: {
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 400,
@@ -34,7 +46,6 @@ export const useStyles = makeStyles({
   },
   calsulatorForm: {
     marginBottom: 130,
-    height: 400,
   },
   typeOfContent: {
     position: 'absolute',

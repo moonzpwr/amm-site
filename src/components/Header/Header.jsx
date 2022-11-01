@@ -19,9 +19,13 @@ function Header() {
   }
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <div className={s.root} id='start'>
-      <a href='#start'>
+      <a href='#root'>
         <Logo className={s.logo} />
       </a>
       <button className={s.menuBtn} onClick={() => setIsMenuOpen(true)}>
@@ -35,10 +39,10 @@ function Header() {
       >
         <div className={classNames(s.mobileMenu)}> 
           <ul className={s.menuList}>
-            <li className={s.menuItem}><a href='#aboutUs'>{t("header.aboutUs")}</a></li>
-            <li className={s.menuItem}><a href='#priceCalculator'>{t("header.priceCalculator")}</a></li>
-            <li className={s.menuItem}><a href='#caseStudies'>{t("header.caseStudies")}</a></li>
-            <li className={s.menuItem}><a href='#conacts'>{t("header.conacts")}</a></li>
+            <li className={s.menuItem}><a href='#aboutUs' onClick={() => handleLinkClick()}>{t("header.aboutUs")}</a></li>
+            <li className={s.menuItem}><a href='#priceCalculator' onClick={() => handleLinkClick()}>{t("header.priceCalculator")}</a></li>
+            <li className={s.menuItem}><a href='#caseStudies' onClick={() => handleLinkClick()}>{t("header.caseStudies")}</a></li>
+            <li className={s.menuItem}><a href='#conacts' onClick={() => handleLinkClick()}>{t("header.conacts")}</a></li>
           </ul>
           <button className={s.contactBtn} onClick={() => setIsModalOpen(true)}>
             {t("header.contactUs")}<ArrowRightUp />
@@ -51,8 +55,25 @@ function Header() {
           <button className={s.closeBtn} onClick={() => setIsMenuOpen(false)}>
             <CloseIcon/>
           </button>
-      </div>
+        </div>
       </CSSTransition>
+      <div className={s.desctopMenu}>
+        <ul className={s.desctopMenuList}>
+          <li className={s.desctopMenuItem}><a href='#aboutUs' onClick={() => handleLinkClick()}>{t("header.aboutUs")}</a></li>
+          <li className={s.desctopMenuItem}><a href='#priceCalculator' onClick={() => handleLinkClick()}>{t("header.priceCalculator")}</a></li>
+          <li className={s.desctopMenuItem}><a href='#caseStudies' onClick={() => handleLinkClick()}>{t("header.caseStudies")}</a></li>
+          <li className={s.desctopMenuItem}><a href='#conacts' onClick={() => handleLinkClick()}>{t("header.conacts")}</a></li>
+        </ul>
+        <div className={s.btnContainer}>
+          <button onClick={() => handleChangeLanguage('ua')} className={s.langBtn}>UA</button>
+          <div className={s.separator}></div>
+          <button onClick={() => handleChangeLanguage('en')} className={s.langBtn}>EN</button>
+        </div>
+        <button className={s.contactBtn} onClick={() => setIsModalOpen(true)}>
+          {t("header.contactUs")}<ArrowRightUp />
+        </button>
+      </div>
+      
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );

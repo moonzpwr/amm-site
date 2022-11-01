@@ -11,9 +11,8 @@ import { useTypeOfContentOptions } from './hooks/useTypeOfContentOptions';
 import { useImportantOptions } from './hooks/useImportantOptions';
 import { customStyles } from 'styles/customStyles';
 import Modal from 'components/Modal/Modal';
-
- 
-
+import { useInView } from 'react-intersection-observer';
+import classNames from 'classnames';
 
 function Calculator() {
   const s = useStyles();
@@ -28,6 +27,20 @@ function Calculator() {
   const [factors, setFactors] = useState([]);
   const [finalPrice, setFinalprice] = useState(0)
   const [isCalculated, setIsCalculated] = useState(false);
+  const { ref: descriptionRef, inView: isDescriptionVisible } = useInView();
+  const { ref: titleRef, inView: isTitleVisible } = useInView();
+  const [isTitleShown, setIsTitleShown] = useState(false);
+  const [isDescriptionlShown, setIsDescriptionShown] = useState(false);
+
+   useEffect(() => {
+    if (isDescriptionVisible) {
+      setIsDescriptionShown(true)
+    }
+    if (isTitleVisible) {
+      setIsTitleShown(true)
+    }
+    
+  }, [isDescriptionVisible, isTitleVisible])
 
   useEffect(() => {
     if (subTypeOfContent === subTypeOfContentConst.tiktokVideo) {
@@ -74,9 +87,9 @@ function Calculator() {
   }
   
   return (
-    <div className={s.root}>
-      <h2 className={s.title}>{t('calculator.title')}</h2>
-      <p className={s.description}>{t('calculator.subTitle')}</p>
+    <div className={s.root} id='priceCalculator'>
+      <h2 className={classNames(s.title, {[s.titleAnimation]: isTitleShown})} ref={titleRef}>{t('calculator.title')}</h2>
+      <p className={classNames(s.description, {[s.descriptionAnimation]: isDescriptionlShown})} ref={descriptionRef}>{t('calculator.subTitle')}</p>
       <form className={s.calsulatorForm}>
         <div className={s.radioContainer}>
           <label className={s.radioLabel}>
@@ -99,36 +112,27 @@ function Calculator() {
         {typeOfContent === 'animation' &&
           <Select isSearchable={false} styles={customStyles} options={animationSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
         }
-        {subTypeOfContent !== subTypeOfContentConst.tiktokVideo &&
-          Object.values(subTypeOfContentConst).map((type, i) => { 
-            return type === subTypeOfContent ? 
-              <div key={i}>
-                <div className={s.formTitle}>{t('calculator.duration')}</div>
-                <Select isSearchable={false} styles={customStyles} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} onChange={(e) => setPrice(e)} />
-              </div>
-              : 
-              ''
-          })
+        {subTypeOfContent && subTypeOfContent !== subTypeOfContentConst.tiktokVideo &&
+          <>
+            <div className={s.formTitle}>{t('calculator.duration')}</div>
+            <Select isSearchable={false} styles={customStyles} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} onChange={(e) => setPrice(e)} />
+          </>   
         }
-        {subTypeOfContent &&
-          Object.values(subTypeOfContentConst).map((type, i) => { 
-            return type === subTypeOfContent ? 
-              <div key={i}>
-                <div className={s.formTitle}>{t('calculator.options')}</div>
-                <Select
-                  isSearchable={false}
-                  styles={customStyles}
-                  options={get(importantOptions, subTypeOfContent)}
-                  isMulti
-                  closeMenuOnSelect={false}
-                  placeholder={t('calculator.formPlaceholderOptions')}
-                  value={factors}
-                  onChange={(e) => setFactors(e)}
-                />
-              </div>
-              : 
-              ''
-          })
+        {subTypeOfContent && 
+          <>
+            <div className={s.formTitle}>{t('calculator.options')}</div>
+            <Select
+              isSearchable={false}
+              styles={customStyles}
+              options={get(importantOptions, subTypeOfContent)}
+              isMulti
+              closeMenuOnSelect={false}
+              blurInputOnSelect={false}
+              placeholder={t('calculator.formPlaceholderOptions')}
+              value={factors}
+              onChange={(e) => setFactors(e)}
+            />
+          </>
         }
       </form>
       {price &&
@@ -146,7 +150,7 @@ function Calculator() {
           </p>
           <p>
             <span className={s.videoOptionsTitle}>{t('calculator.form')}:</span>
-            <span className={s.videoOptionsValue}>{t(`calculator.videoOption.${subTypeOfContent}`)}</span>
+            <span className={s.videoOptionsValue}>{t(`calculator.${typeOfContent === 'video' ? 'videoOption' : 'animationOtion '}.${subTypeOfContent}`)}</span>
           </p>
           <p>
             <span className={s.videoOptionsTitle}>{t('calculator.duration')}:</span>
