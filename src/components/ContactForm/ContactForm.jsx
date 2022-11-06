@@ -40,7 +40,7 @@ function ContactForm() {
         <>
           <h2>{t('contactForm.title')}</h2>
           <p>{t('contactForm.description')}</p>
-          <form className={s.contactForm} name="contactForm" method="POST" data-netlify="true" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+          <form className={s.contactForm} name="contactForm" action='/contactForm' method="POST" data-netlify="true" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
             <input type='hidden' name='form-name' value='contactForm'/>
             <label>
               <span>{t("contactModal.name")}</span>
