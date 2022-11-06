@@ -98,6 +98,7 @@ export const useStyles = makeStyles({
     padding: 0,
     backgroundColor: 'transparent',
     border: 'none',
+    cursor: 'pointer',
   },
   successTitle: {
     textAlign: 'center',
