@@ -47,21 +47,22 @@ function Modal({isModalOpen, setIsModalOpen}) {
             <>
               <img src={pig} alt="pig-logo" className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
-              <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+              {/* <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}> */}
+              <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST">
                 <input type='hidden' name='form-name' value='modaForm'/>
                 <label>
                   <span>{ t("contactModal.name") }</span>
-                  <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)}/>
+                  <input required type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)}/>
                 </label>
                 <label>
                   <span>{ t("contactModal.phoneNumber") }</span>
-                  <input type="number" className={s.contactInput} name='phone' value={phone} onChange={(e) => setPhone(e.target.value)}/>
+                  <input required type="number" className={s.contactInput} name='phone' value={phone} onChange={(e) => setPhone(e.target.value)}/>
                 </label>
                 <label>
                   <span>{ t("contactModal.email") }</span>
-                  <input type="email" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                  <input required type="email" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </label>
-                <button className={s.submitBtn} type='submit' onClick={(e) => handleSubmitClick(e)}>
+                <button className={s.submitBtn} type='submit'>
                   {t("contactModal.btn")}
                 </button>
               </form>
