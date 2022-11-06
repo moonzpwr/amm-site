@@ -18,7 +18,7 @@ function ContactForm() {
   const [isSubmited, setIsSubmited] = useState(false);
 
   const handleSubmitClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsSubmited(true);//TODO: implement validation
     console.log({name, phone, email});//TODO: implement email
   }
@@ -37,7 +37,7 @@ function ContactForm() {
         <>
           <h2>{t('contactForm.title')}</h2>
           <p>{t('contactForm.description')}</p>
-          <form className={s.contactForm} name="contactForm" data-netlify="true">
+          <form className={s.contactForm} name="contactForm" method="POST" data-netlify="true">
             <label>
               <span>{t("contactModal.name")}</span>
               <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)} />
