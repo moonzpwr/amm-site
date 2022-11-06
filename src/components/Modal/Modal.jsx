@@ -18,7 +18,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
   const [isSubmited, setIsSubmited] = useState(false);
 
   const handleSubmitClick = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsSubmited(true);//TODO: implement validation
     console.log({name, phone, email});//TODO: implement email
   }
