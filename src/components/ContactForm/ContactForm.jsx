@@ -18,7 +18,23 @@ function ContactForm() {
   const [isSubmited, setIsSubmited] = useState(false);
 
   const handleSubmitClick = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
+
+    const myForm = e.target;
+    const formData = new FormData(myForm);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
+
+
+
+
+
     setIsSubmited(true);//TODO: implement validation
     console.log({name, phone, email});//TODO: implement email
   }
