@@ -49,7 +49,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
               {/* <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}> */}
               <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST">
-                <input type='hidden' name='form-name' value='modaForm'/>
+                <input type='hidden' name='form-name' value='modalForm'/>
                 <label>
                   <span>{ t("contactModal.name") }</span>
                   <input required type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)}/>
