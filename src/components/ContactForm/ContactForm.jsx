@@ -20,16 +20,19 @@ function ContactForm() {
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
+    console.log(myForm)
+    // myForm.submit();
 
-    const formData = new FormData(myForm.current);
+
+    // const formData = new FormData(myForm.current);
     
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: new URLSearchParams(formData).toString(),
+    // })
+    //   .then(() => console.log("Form successfully submitted"))
+    //   .catch((error) => alert(error));
 
 
 
@@ -53,7 +56,8 @@ function ContactForm() {
         <>
           <h2>{t('contactForm.title')}</h2>
           <p>{t('contactForm.description')}</p>
-          <form className={s.contactForm} name="contactForm" method="POST" data-netlify="true" ref={myForm}>
+          <form className={s.contactForm} name="contactForm" method="POST" data-netlify="true" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+            <input type='hidden' name='form-name' value='contactForm'/>
             <label>
               <span>{t("contactModal.name")}</span>
               <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)} />
@@ -64,9 +68,9 @@ function ContactForm() {
             </label>
             <label>
               <span>{t("contactModal.email")}</span>
-              <input type="text" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input type="email" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
             </label>
-            <button className={s.submitBtn} type='button' onClick={(e) => handleSubmitClick(e)}>
+            <button className={s.submitBtn} type='submit'>
               {t("contactModal.btn")}
             </button>
           </form>

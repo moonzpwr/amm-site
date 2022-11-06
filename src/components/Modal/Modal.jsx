@@ -19,16 +19,18 @@ function Modal({isModalOpen, setIsModalOpen}) {
   const myForm = useRef()
 
   const handleSubmitClick = (e) => {
+    console.log(myForm.current)
+    myForm.current.submit()
     e.preventDefault();
-    const formData = new FormData(myForm.current);
+    // const formData = new FormData(myForm.current);
     
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: new URLSearchParams(formData).toString(),
+    // })
+    //   .then(() => console.log("Form successfully submitted"))
+    //   .catch((error) => alert(error));
 
 
 
@@ -57,7 +59,8 @@ function Modal({isModalOpen, setIsModalOpen}) {
             <>
               <img src={pig} alt="pig-logo" className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
-              <form className={s.contactForm} name="modalForm" method="POST" data-netlify="true" ref={myForm}>
+              <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+                <input type='hidden' name='form-name' value='modaForm'/>
                 <label>
                   <span>{ t("contactModal.name") }</span>
                   <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)}/>
@@ -68,16 +71,16 @@ function Modal({isModalOpen, setIsModalOpen}) {
                 </label>
                 <label>
                   <span>{ t("contactModal.email") }</span>
-                  <input type="text" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                  <input type="email" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </label>
-                <button className={s.submitBtn} type='button' onClick={(e) => handleSubmitClick(e)}>
+                <button className={s.submitBtn} type='submit' onClick={(e) => handleSubmitClick(e)}>
                   {t("contactModal.btn")}
                 </button>
               </form>
             </>
           }
         </div>
-        <button className={s.modalCloseBtn} onClick={() => setIsModalOpen(false)}>
+        <button className={s.modalCloseBtn}>
           <CloseIcon/>
         </button>
       </div>
