@@ -47,7 +47,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
             <>
               <img src={pig} alt="pig-logo" className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
-              <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+              <form className={s.contactForm} name="modalForm" action='/' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
                 <input type='hidden' name='form-name' value='modalForm'/>
                 <label>
                   <span>{ t("contactModal.name") }</span>
