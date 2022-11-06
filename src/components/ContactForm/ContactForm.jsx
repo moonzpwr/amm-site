@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useStyles } from './ContactForm.styles';
 import { useTranslation } from 'react-i18next';
 import fox from 'assets/images/Fox.png';
@@ -16,12 +16,12 @@ function ContactForm() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmited, setIsSubmited] = useState(false);
+  const myForm = useRef()
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
 
-    const myForm = e.target;
-    const formData = new FormData(myForm);
+    const formData = new FormData(myForm.current);
     
     fetch("/", {
       method: "POST",
@@ -53,7 +53,7 @@ function ContactForm() {
         <>
           <h2>{t('contactForm.title')}</h2>
           <p>{t('contactForm.description')}</p>
-          <form className={s.contactForm} name="contactForm" method="POST" data-netlify="true">
+          <form className={s.contactForm} name="contactForm" method="POST" data-netlify="true" ref={myForm}>
             <label>
               <span>{t("contactModal.name")}</span>
               <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)} />

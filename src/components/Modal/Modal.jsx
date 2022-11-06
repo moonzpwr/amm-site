@@ -1,7 +1,7 @@
 import { useStyles } from './Modal.styles';
 import { ReactComponent as CloseIcon } from 'assets/icons/closeIcon.svg';
 import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { useTranslation } from 'react-i18next';
 import 'utils/i18next';
@@ -16,12 +16,11 @@ function Modal({isModalOpen, setIsModalOpen}) {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmited, setIsSubmited] = useState(false);
+  const myForm = useRef()
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
-
-    const myForm = e.target;
-    const formData = new FormData(myForm);
+    const formData = new FormData(myForm.current);
     
     fetch("/", {
       method: "POST",
@@ -58,7 +57,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
             <>
               <img src={pig} alt="pig-logo" className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
-              <form className={s.contactForm} name="modalForm" method="POST" data-netlify="true">
+              <form className={s.contactForm} name="modalForm" method="POST" data-netlify="true" ref={myForm}>
                 <label>
                   <span>{ t("contactModal.name") }</span>
                   <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)}/>
