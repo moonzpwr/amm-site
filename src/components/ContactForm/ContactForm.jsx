@@ -37,7 +37,7 @@ function ContactForm() {
         <>
           <h2>{t('contactForm.title')}</h2>
           <p>{t('contactForm.description')}</p>
-          <form className={s.contactForm}>
+          <form className={s.contactForm} name="contactForm" data-netlify="true">
             <label>
               <span>{t("contactModal.name")}</span>
               <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)} />

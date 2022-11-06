@@ -44,7 +44,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
             <>
               <img src={pig} alt="pig-logo" className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
-              <form className={s.contactForm}>
+              <form className={s.contactForm} name="modalForm" data-netlify="true">
                 <label>
                   <span>{ t("contactModal.name") }</span>
                   <input type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)}/>
