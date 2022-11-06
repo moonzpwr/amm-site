@@ -20,7 +20,15 @@ function Modal({isModalOpen, setIsModalOpen}) {
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
-    myForm.current.submit()
+    // myForm.current.submit()
+      const formData = new FormData(myForm.current);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
 
     setIsSubmited(true);//TODO: implement validation
     console.log({name, phone, email});//TODO: implement email
@@ -47,7 +55,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
             <>
               <img src={pig} alt="pig-logo" className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
-              <form className={s.contactForm} name="modalForm" action='/' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+              <form className={s.contactForm} name="modalForm" method="POST" ref={myForm}>
                 <input type='hidden' name='form-name' value='modalForm'/>
                 <label>
                   <span>{ t("contactModal.name") }</span>
@@ -61,7 +69,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
                   <span>{ t("contactModal.email") }</span>
                   <input required type="email" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </label>
-                <button className={s.submitBtn} type='submit'>
+                <button className={s.submitBtn} type='button' onClick={(e) => handleSubmitClick(e)}>
                   {t("contactModal.btn")}
                 </button>
               </form>
