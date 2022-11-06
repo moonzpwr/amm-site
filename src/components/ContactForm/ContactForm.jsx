@@ -20,23 +20,7 @@ function ContactForm() {
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
-    console.log(myForm)
-    // myForm.submit();
-
-
-    // const formData = new FormData(myForm.current);
-    
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: new URLSearchParams(formData).toString(),
-    // })
-    //   .then(() => console.log("Form successfully submitted"))
-    //   .catch((error) => alert(error));
-
-
-
-
+    myForm.submit();
 
     setIsSubmited(true);//TODO: implement validation
     console.log({name, phone, email});//TODO: implement email
@@ -56,7 +40,7 @@ function ContactForm() {
         <>
           <h2>{t('contactForm.title')}</h2>
           <p>{t('contactForm.description')}</p>
-          <form className={s.contactForm} name="contactForm" method="POST" data-netlify="true" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+          <form className={s.contactForm} name="contactForm" action='/' method="POST" data-netlify="true" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
             <input type='hidden' name='form-name' value='contactForm'/>
             <label>
               <span>{t("contactModal.name")}</span>

@@ -19,20 +19,8 @@ function Modal({isModalOpen, setIsModalOpen}) {
   const myForm = useRef()
 
   const handleSubmitClick = (e) => {
-    console.log(myForm.current)
-    myForm.current.submit()
     e.preventDefault();
-    // const formData = new FormData(myForm.current);
-    
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: new URLSearchParams(formData).toString(),
-    // })
-    //   .then(() => console.log("Form successfully submitted"))
-    //   .catch((error) => alert(error));
-
-
+    myForm.current.submit()
 
     setIsSubmited(true);//TODO: implement validation
     console.log({name, phone, email});//TODO: implement email
@@ -59,7 +47,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
             <>
               <img src={pig} alt="pig-logo" className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
-              <form className={s.contactForm} name="modalForm" action='/modalForm' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
+              <form className={s.contactForm} name="modalForm" action='/' method="POST" ref={myForm} onSubmit={(e) => handleSubmitClick(e)}>
                 <input type='hidden' name='form-name' value='modaForm'/>
                 <label>
                   <span>{ t("contactModal.name") }</span>
