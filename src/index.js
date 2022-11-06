@@ -4,10 +4,9 @@ import 'styles/index.css';
 import 'styles/transitions.css'
 import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
