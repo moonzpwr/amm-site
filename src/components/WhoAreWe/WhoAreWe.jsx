@@ -28,24 +28,28 @@ function WhoAreWe() {
   
   return (
     <div className={s.root} id='aboutUs'>
-      <div className={s.labelContainer}>
-        <div className={classNames(s.label, { [s.labelAnimation]: isLabelShown })} ref={labelRef}>{t('whoWeAre.label')}</div>
+      <div className={s.desctopContainer}>
+        <div className={s.leftBlock}>
+          <div className={s.labelContainer}>
+            <div className={classNames(s.label, { [s.labelAnimation]: isLabelShown })} ref={labelRef}>{t('whoWeAre.label')}</div>
+          </div>
+        </div>
+        <div className={s.rightBlock}>
+          <h2 className={classNames(s.title, {[s.titleAnimation]: isTitlelShown})} ref={titleRef}>{t('whoWeAre.title')}</h2>
+          <ul className={s.reasonList}>
+            <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.firstItem')}</li>
+            <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.secondItem')}</li>
+            <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.thirdItem')}</li>
+            <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.fourthItem')}</li>
+            <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.fifthItem')}</li>
+          </ul>
+        </div>
       </div>
-      <h2 className={classNames(s.title, {[s.titleAnimation]: isTitlelShown})} ref={titleRef}>{t('whoWeAre.title')}</h2>
-      <ul className={s.reasonList}>
-        <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.firstItem')}</li>
-        <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.secondItem')}</li>
-        <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.thirdItem')}</li>
-        <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.fourthItem')}</li>
-        <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.fifthItem')}</li>
-      </ul>
       <div className={s.video} onClick={() => setIsVideoClicked(true)}>
         {isVideoClicked ?
           <iframe src='http://www.youtube.com/embed/7gRb2xhB4Ik' className={s.preview} width={320} height={190} title='video'></iframe>
           :
-          <a href='https://www.youtube.com/watch?v=4JS70KB9GS0&ab_channel=%D0%92%D0%B0%D0%B4%D0%B8%D0%BC%D0%9C%D0%B0%D0%BA%D0%B5%D0%B5%D0%B2' target='_blank' rel="noreferrer">
-            <img className={s.preview} src='https://i.ytimg.com/vi/7gRb2xhB4Ik/maxresdefault.jpg' alt='video_preview'/>
-          </a>
+          <img className={s.preview} src='https://i.ytimg.com/vi/7gRb2xhB4Ik/maxresdefault.jpg' alt='video_preview'/>
         }
         {!isVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
       </div>

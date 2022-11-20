@@ -1,4 +1,5 @@
 import { makeStyles } from '@mui/styles';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 // import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
@@ -18,8 +19,28 @@ export const useStyles = makeStyles({
     from: { transform: 'scale(0.5)', opacity: 0 },
     to: { transform: 'scale(1)', opacity: 1 },
   },
-  titleContainer: {
+  mobileTitleContainer: {
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'none'
+    }
+  },
+  desctopTitle: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      width: 1000,
+      margin: '140px auto 0 auto',
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      fontFamily: 'Furore, sans-serif',
+      fontWeight: 400,
+      fontSize: 60,
+      letterSpacing: '0.07em',
+      lineHeight: '130%',
+      textAlign: 'center',
+    }
   },
   title: {
     fontFamily: 'Furore, sans-serif',
@@ -36,6 +57,13 @@ export const useStyles = makeStyles({
     lineHeight: '100%',
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
     animationDelay: '1s',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 22,
+      lineHeight: '150%',
+      textAlign: 'center',
+      margin: '20px 0 40px 0',
+    }
   },
   modalBtn: {
     height: 50,
@@ -54,6 +82,10 @@ export const useStyles = makeStyles({
     animationDelay: '1.5s',
     '&:active': {
       backgroundColor: COLORS.GREY.LIGHT
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      marginBottom: 220,
     }
   },
   ribbonContainer: {
@@ -76,6 +108,14 @@ export const useStyles = makeStyles({
     color: COLORS.WHITE,
     zIndex: 5,
     whiteSpace: 'nowrap',
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 1895,
+      height: 31,
+      fontSize: 24,
+      transform: 'rotate(-4deg)',
+      bottom: 90,
+    }
   },
   whiteRibbon: {
     whiteSpace: 'nowrap',
@@ -94,74 +134,126 @@ export const useStyles = makeStyles({
     letterSpacing: '0.07em',
     color: COLORS.BLACK.PRIMARY,
     zIndex: 4,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 1895,
+      height: 31,
+      fontSize: 24,
+      transform: 'rotate(4deg)',
+      bottom: 30
+    }
   },
-  // qwert: {
-  //   width: 1440,
-  //   height: 728,
-  //   position: 'relative'
-  // },
-  // elipse: {
-  //   zIndex: 3,
-  //   position: 'absolute',
-  //   backgroundColor: '#DC1515',
-  //   width: 200,
-  //   height:337,
-  //   borderRadius: '50%',
-  //   filter: 'blur(100px)',
-  //   left: '37.5%',
-  //   right: '48.61%',
-  //   top: '35.71%',
-  //   bottom: '17.99%',
-  //   animation: '$Ellipse1 13000ms 0ms linear infinite',
-  // },
-  // '@keyframes Ellipse1': {
-  //   '0%': {left: 540},
-  //   '10%': { left: 608 },
-  //   '20%': {left: 689},
-  //   '30%': {left: 560},
-  //   '40%': {left: 510},
-  //   '50%': {left: 540},
-  //   '55%': {top: 260},
-  //   '60%': {top: 204},
-  //   '70%': {top: 220},
-  //   '80%': {top: 210},
-  //   '90%': {top: 220},
-  //   '100%': {top: 260},
-  // },
-  // eclipseTwo: {
-  //   zIndex:2,
-  //   position: 'absolute',
-  //   backgroundColor: '#C99C9C;',
-  //   width: 151,
-  //   height: 186,
-  //   borderRadius: '50%',
-  //   left: '47.15%',
-  //   right: '42.36%',
-  //   top: '59.34%',
-  //   bottom: '15.11%',
-  //   filter: 'blur(60px)',
-  //   animation: '$Ellipse2 13000ms 0ms linear infinite'
-  // },
-  // '@keyframes Ellipse2': {
-  //   '0%': {left: 679},
-  //   '10%': { left: 600 },
-  //   '20%': {left: 610},
-  //   '30%': {left: 624},
-  //   '40%': {left: 646},
-  //   '50%': {left: 679},
-  //   '55%': {top: 432},
-  //   '60%': {top: 332},
-  //   '70%': {top: 256},
-  //   '80%': {top: 320},
-  //   '90%': {top: 309},
-  //   '100%': {top: 432},
-  // },
-  
   elipse: {
-    display: 'none'
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      position: 'absolute',
+      backgroundColor: '#DC1515',
+      width: 200,
+      height:337,
+      borderRadius: '50%',
+      filter: 'blur(100px)',
+      left: '37.5%',
+      right: '48.61%',
+      top: '35.71%',
+      bottom: '17.99%',
+      animation: '$Ellipse1 13000ms 0ms linear infinite',
+    }
+  },
+  '@keyframes Ellipse1': {
+    '0%': {
+      left: '37.5%',
+      right: '48.61%',
+      top: '35.71%',
+      bottom: '17.99%',
+    },
+    '20%': {
+      left: '47.22%',
+      right: '38.89%',
+      top: '32.97%',
+      bottom: '17.86%',
+    },
+    '40%': { 
+      left: '47.85%',
+      right: '36.81%',
+      top: '30.22%',
+      bottom: '20.6%',
+    },
+    '60%': {
+      left: '38.89%',
+      right: '45.76%',
+      top: '28.85%',
+      bottom: '24.86%',
+    },
+    '80%': {
+      left: '35.42%',
+      right: '51.11%',
+      top: '30.22%',
+      bottom: '21.98%',
+    },
+    '100%': {
+      left: '37.5%',
+      right: '48.61%',
+      top: '35.71%',
+      bottom: '17.99%',
+    },
   },
   eclipseTwo: {
-    display: 'none'
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      position: 'absolute',
+      backgroundColor: '#C99C9C;',
+      width: 151,
+      height: 186,
+      borderRadius: '50%',
+      left: '47.15%',
+      right: '42.36%',
+      top: '59.34%',
+      bottom: '15.11%',
+      filter: 'blur(60px)',
+      animation: '$Ellipse2 13000ms 0ms linear infinite'
+    }
+  },
+  '@keyframes Ellipse2': {
+    '0%': {
+      left: '47.15%',
+      right: '42.36%',
+      top: '59.34%',
+      bottom: '15.11%',
+    },
+    '20%': {
+      left: '41.67%',
+      right: '47.64%',
+      top: '45.6%',
+      bottom: '25.55%',
+    },
+    '40%': {
+      left: '42.36%',
+      right: '46.11%',
+      top: '35.16%',
+      bottom: '35.58%',
+    },
+    '60%': {
+      left: '43.33%',
+      right: '45.14%',
+      top: '43.96%',
+      bottom: '23.35%',
+    },
+    '80%': {
+      left: '44.86%',
+      right: '45.14%',
+      top: '42.45%',
+      bottom: '29.12%',
+    },
+    '100%': {
+      left: '47.15%',
+      right: '42.36%',
+      top: '59.34%',
+      bottom: '15.11%',
+    },
   },
 });
 

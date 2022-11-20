@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
 export const useStyles = makeStyles({
@@ -7,6 +7,26 @@ export const useStyles = makeStyles({
     margin: '70px auto 80px auto',
     position: 'relative',
     paddingTop: 50,
+
+    [BREAKPOINTS.DESKTOP]: {
+      paddingTop: 0,
+      margin: '120px auto 80px auto',
+    }
+  },
+  desctopContainer: {
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'flex',
+    }
+  },
+  leftBlock: {
+    [BREAKPOINTS.DESKTOP]: {
+      width: 230,
+    }
+  },
+  rightBlock: {
+    [BREAKPOINTS.DESKTOP]: {
+      width: 940,
+    }
   },
   labelContainer: {
     position: 'absolute',
@@ -25,6 +45,10 @@ export const useStyles = makeStyles({
     letterSpacing: '0.07em',
     color: COLORS.BLACK.PRIMARY,
     backgroundColor: COLORS.WHITE,
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 22,
+    }
   },
   labelAnimation: {
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -50,6 +74,10 @@ export const useStyles = makeStyles({
     textTransform: 'uppercase',
     letterSpacing: '0.07em',
     margin: '0 auto 20px auto',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 36,
+    }
   },
   reasonList: {
     display: 'flex',
@@ -65,6 +93,10 @@ export const useStyles = makeStyles({
     fontWeight: 400,
     fontSize: 14,
     lineHeight: '150%',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 18,
+    }
   },
   starIcon: {
     fill: COLORS.WHITE,
@@ -103,6 +135,12 @@ export const useStyles = makeStyles({
     },
     '&:active svg': {
       fill: COLORS.GREY.LIGHT,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      '& svg': {
+        width: 100,
+      },
     }
   },
 });

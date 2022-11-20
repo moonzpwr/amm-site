@@ -42,9 +42,7 @@ function Case() {
           {isVideoClicked ?
             <iframe src='http://www.youtube.com/embed/i45glLZVEUs' className={s.preview} width={320} height={190} title='video'></iframe>
             :
-            <a href='https://www.youtube.com/watch?v=i45glLZVEUs&ab_channel=AMMproduction%2F%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3' target='_blank' rel="noreferrer">
-              <img className={s.preview} src='https://i.ytimg.com/vi/i45glLZVEUs/hqdefault.jpg' alt='video_preview'/>
-            </a>
+            <img className={s.preview} src='https://i.ytimg.com/vi/i45glLZVEUs/hqdefault.jpg' alt='video_preview'/>
           }
           {!isVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
         </div>
@@ -59,9 +57,7 @@ function Case() {
           {isSecondVideoClicked ?
             <iframe src='http://www.youtube.com/embed/7i5gG8rnpcA' className={s.preview} width={320} height={190} title='video'></iframe>
             :
-            <a href='https://www.youtube.com/watch?v=7i5gG8rnpcA&ab_channel=AMMproduction%2F%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3' target='_blank' rel="noreferrer">
-              <img className={s.preview} src='https://i.ytimg.com/vi/7i5gG8rnpcA/hqdefault.jpg' alt='video_preview'/>
-            </a>
+            <img className={s.preview} src='https://i.ytimg.com/vi/7i5gG8rnpcA/hqdefault.jpg' alt='video_preview'/>
           }
           {!isSecondVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
         </div>
@@ -76,9 +72,7 @@ function Case() {
           {isThirdVideoClicked ?
             <iframe src='http://www.youtube.com/embed/IrVYH1WYgMk' className={s.preview} width={320} height={190} title='video'></iframe>
             :
-            <a href='https://www.youtube.com/watch?v=IrVYH1WYgMk&ab_channel=AMMproduction%2F%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3' target='_blank' rel="noreferrer">
-              <img className={s.preview} src='https://i.ytimg.com/vi/IrVYH1WYgMk/hqdefault.jpg' alt='video_preview'/>
-            </a>
+            <img className={s.preview} src='https://i.ytimg.com/vi/IrVYH1WYgMk/hqdefault.jpg' alt='video_preview'/>
           }
           {!isThirdVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
         </div>

@@ -33,9 +33,9 @@ function Features() {
     <div className={s.root}>
       <h2 className={classNames(s.title, {[s.titleAnimation]: isTitlelShown})} ref={titleRef}>{t('ourFeatures.title')}</h2>
       <div className={classNames(s.label, {[s.labelAnimation]: isLabelShown})} ref={labelRef}>{t('ourFeatures.label')}</div>
-      <p className={s.describe}>{t('ourFeatures.subTitle')}</p>
+      <p className={classNames(s.describe, {[s.describeAnimation]: isLabelShown})}>{t('ourFeatures.subTitle')}</p>
       <ul className={s.featuresList}>
-        <li className={s.featuresItem}>
+        <li className={classNames(s.featuresItem, {[s.featuresItemFirstAnimation]: isLabelShown})}>
           <div className={s.featuresIconContainer}>
             <TransferIcon/>
           </div>
@@ -44,7 +44,7 @@ function Features() {
             <p className={s.featureDescription}>{t('ourFeatures.cards.firstItem.descriptions')}</p>
           </div>
         </li>
-        <li className={s.featuresItem}>
+        <li className={classNames(s.featuresItem, {[s.featuresItemFirstAnimation]: isLabelShown})}>
           <div className={s.featuresIconContainer}>
             <FundsIcon/>
           </div>
@@ -53,7 +53,7 @@ function Features() {
             <p className={s.featureDescription}>{t('ourFeatures.cards.secondItem.descriptions')}</p>
           </div>
         </li>
-        <li className={s.featuresItem}>
+        <li className={classNames(s.featuresItem, {[s.featuresItemFirstAnimation]: isLabelShown})}>
           <div className={s.featuresIconContainer}>
             <UsersIcon/>
           </div>
@@ -62,7 +62,7 @@ function Features() {
             <p className={s.featureDescription}>{t('ourFeatures.cards.thirdItem.descriptions')}</p>
           </div>
         </li>
-        <li className={s.featuresItem}>
+        <li className={classNames(s.featuresItem, {[s.featuresItemSecondAnimation]: isLabelShown})}>
           <div className={s.featuresIconContainer}>
             <MovieIcon/>
           </div>
@@ -71,7 +71,7 @@ function Features() {
             <p className={s.featureDescription}>{t('ourFeatures.cards.fourthItem.descriptions')}</p>
           </div>
         </li>
-        <li className={s.featuresItem}>
+        <li className={classNames(s.featuresItem, {[s.featuresItemSecondAnimation]: isLabelShown})}>
           <div className={s.featuresIconContainer}>
             <MusculeIcon/>
           </div>
@@ -80,7 +80,7 @@ function Features() {
             <p className={s.featureDescription}>{t('ourFeatures.cards.fifthItem.descriptions')}</p>
           </div>
         </li>
-        <li className={s.featuresItem}>
+        <li className={classNames(s.featuresItem, {[s.featuresItemSecondAnimation]: isLabelShown})}>
           <div className={s.featuresIconContainer}>
             <RocketIcon/>
           </div>

@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
+import cardBg from 'assets/images/cardBg.jpg'
 
 export const useStyles = makeStyles({
   root: {
@@ -13,6 +14,10 @@ export const useStyles = makeStyles({
     lineHeight: '150%',
     textAlign: 'center',
     letterSpacing: '0.07em',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 36,
+    }
   },
   label: {
     display: 'block',
@@ -27,6 +32,11 @@ export const useStyles = makeStyles({
     color: COLORS.BLACK.PRIMARY,
     backgroundColor: COLORS.WHITE,
     padding: '4px 12px',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 22,
+      width: 205,
+    }
   },
   labelAnimation: {
     animation: '$labelFadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -50,16 +60,88 @@ export const useStyles = makeStyles({
     fontSize: 18,
     lineHeight: '150%',
     textAlign: 'center',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 24,
+    }
   },
   featuresList: {
     display: 'flex',
     flexDirection: 'column',
     gap: 20,
+
+    [BREAKPOINTS.DESKTOP]: {
+      flexDirection: 'row',
+      flexWrap: 'wrap'
+    }
   },
   featuresItem: {
     display: 'flex',
     gap: 20,
     padding: 18,
+
+    [BREAKPOINTS.DESKTOP]: {
+      zIndex: 2,
+      position: 'relative',
+      width: 376,
+      height: 285,
+      padding: 40,
+      flexDirection: 'column',
+
+      '&::after': {
+        content: "''",
+        opacity: 0,
+        display: 'block',
+        height: 285,
+        width: 376,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        transition: 'opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+        background: `url(${cardBg})`,
+      },
+
+      '&::before': {
+        content: "''",
+        opacity: 1,
+        display: 'block',
+        height: 285,
+        width: 376,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        transition: 'opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+        background: COLORS.BLACK.LIGHT,
+      },
+
+      '&:hover::before': {
+        opacity: 0,
+      },
+
+      '&:hover::after': {
+        opacity: 1,
+      },
+    }
+  },
+  describeAnimation: {
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '1.5s',
+    }
+  },
+  featuresItemFirstAnimation:{
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '2s',
+    }
+  },
+  featuresItemSecondAnimation:{
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '2.5s',
+    }
   },
   featuresIconContainer: {
     width: 40,
@@ -67,6 +149,14 @@ export const useStyles = makeStyles({
     '& svg': {
       width: 40,
       fill: COLORS.WHITE,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 64,
+
+      '& svg': {
+        width: 64,
+      }
     }
   },
   featureTitle: {
@@ -75,6 +165,10 @@ export const useStyles = makeStyles({
     fontWeight: 700,
     fontSize: 16,
     lineHeight: '150%',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 22,
+    }
   },
   featureDescription: {
     margin: 0, 
@@ -82,6 +176,10 @@ export const useStyles = makeStyles({
     fontWeight: 400,
     fontSize: 12,
     lineHeight: '150%',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 16,
+    }
   }
 });
 

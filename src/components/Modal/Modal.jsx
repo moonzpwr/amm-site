@@ -1,13 +1,13 @@
 import { useStyles } from './Modal.styles';
 import { ReactComponent as CloseIcon } from 'assets/icons/closeIcon.svg';
 import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
+import { ReactComponent as PigIcon } from 'assets/icons/pigIcon.svg';
+import { ReactComponent as FoxIcon } from 'assets/icons/foxIcon.svg';
 import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { useTranslation } from 'react-i18next';
 import 'utils/i18next';
-import pig from 'assets/images/Pig.png';
-import fox from 'assets/images/Fox.png';
-import {tel} from 'helpers/constants'
+import { tel } from 'helpers/constants';
 
 function Modal({isModalOpen, setIsModalOpen}) {
   const s = useStyles();
@@ -31,27 +31,35 @@ function Modal({isModalOpen, setIsModalOpen}) {
 
     setIsSubmited(true);//TODO: implement validation
   }
+  
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setIsSubmited(false);
+  }
  
   return (
-    <CSSTransition
-      in={isModalOpen}
-      unmountOnExit
-      timeout={250 }
-      classNames='modal'
-    >
-      <div className={s.contactsModal}>
-        <div className={s.modalContainer}>
+    <>
+      {isModalOpen &&
+        <div className={s.backdrop} onClick={() => handleCloseModal()}></div>
+      }
+      <CSSTransition
+        in={isModalOpen}
+        unmountOnExit
+        timeout={250}
+        classNames='modal'
+      >
+        <div className={s.contactsModal}>
           {isSubmited ?
-            <div>
+            <div className={s.successfullForm}>
               <h2 className={s.successTitle}>{t("contactModal.successTitle")}</h2>
               <p className={s.successDescription}>{t("contactModal.description")}</p>
               <p className={s.phoneContainer}><PhoneIcon className={s.phoneIcon} />{tel}</p>
               <p className={s.successRequest}>{t("contactModal.request")}</p>
-              <img src={fox} alt="fox-logo" className={s.foxLogo}></img>
+              <FoxIcon className={s.foxLogo}/>
             </div>
             :
-            <>
-              <img src={pig} alt="pig-logo" className={s.pigLogo} />
+            <div className={s.modalContainer}>
+              <PigIcon className={s.pigLogo} />
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
               <form className={s.contactForm} name="modalForm" method="POST" ref={myForm}>
                 <input type='hidden' name='form-name' value='modalForm'/>
@@ -71,14 +79,14 @@ function Modal({isModalOpen, setIsModalOpen}) {
                   {t("contactModal.btn")}
                 </button>
               </form>
-            </>
+            </div>
           }
+          <button className={s.modalCloseBtn} onClick={()=> handleCloseModal()}>
+            <CloseIcon/>
+          </button>
         </div>
-        <button className={s.modalCloseBtn} onClick={()=> setIsModalOpen(false)}>
-          <CloseIcon/>
-        </button>
-      </div>
-    </CSSTransition>
+      </CSSTransition>
+    </>
   );
 }
 

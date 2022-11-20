@@ -1,4 +1,5 @@
 import { makeStyles } from '@mui/styles';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 // import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
@@ -19,6 +20,14 @@ export const useStyles = makeStyles({
     right: 0,
     height: "100vh",
     backgroundColor: COLORS.BLACK.PRIMARY,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 960,
+      height: 660,
+      top: 'calc(50% - 330px)',
+      left: 'calc(50% - 480px)',
+      overflow: 'hidden',
+    }
   },
   modalContainer: {
     backgroundColor: COLORS.BLACK.PRIMARY,
@@ -28,9 +37,38 @@ export const useStyles = makeStyles({
     flexDirection: 'column',
     alignItems: 'center',
     paddingTop: 40,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 575,
+      height: 540,
+      margin: '60px auto 60px 80px'
+    }
+  },
+  successfullForm: {
+    backgroundColor: COLORS.BLACK.PRIMARY,
+    width: 288,
+    margin: '0 auto',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 492,
+      height: 333,
+      margin: '112px 80px 113px auto'
+    }
   },
   pigLogo: {
     width: 80,
+
+    [BREAKPOINTS.DESKTOP]: {
+      position: 'absolute',
+      width: 520,
+      height: 520,
+      top: 80,
+      right: -260,
+    }
   },
   modalTitle: {
     textAlign: 'center',
@@ -39,6 +77,13 @@ export const useStyles = makeStyles({
     fontSize: 22,
     lineHeight: '150%',
     marginTop: 18, 
+
+    [BREAKPOINTS.DESKTOP]:{
+      marginTop: 0,
+      fontSize: 36,
+      textAlign: 'center',
+      letterSpacing: '0.07em',
+    }
   },
   contactForm: {
     display: 'flex',
@@ -67,6 +112,12 @@ export const useStyles = makeStyles({
     fontSize: 18,
     lineHeight: '150%',
     color: COLORS.WHITE,
+    
+    '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {
+      display: 'none',
+      appearance: 'none',
+      margin: 0,
+    },
 
     borderBottom: `1px solid ${COLORS.GREY.PRIMARY}`,
     backgroundColor: COLORS.BLACK.PRIMARY,
@@ -107,6 +158,12 @@ export const useStyles = makeStyles({
     fontSize: 22,
     lineHeight: '150%',
     marginTop: 40,
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 36,
+      lineHeight: '150%',
+      letterSpacing: '0.07em',
+    }
   },
   successDescription: {
     fontFamily: 'Roboto, sans-serif',
@@ -116,6 +173,10 @@ export const useStyles = makeStyles({
     textAlign: 'center',
     color: COLORS.GREY.LIGHT,
     margin: '28px 0',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 18,
+    }
   },
   phoneIcon: {
     width: 32,
@@ -130,7 +191,11 @@ export const useStyles = makeStyles({
     fontSize: 18,
     lineHeight: '150%',
     letterSpacing: '0.07em',
-    margin: '30px 0'
+    margin: '30px 0',
+
+    [BREAKPOINTS.DESKTOP]:{
+      fontSize: 22,
+    }
   },
   successRequest: {
     fontFamily: 'Roboto, sans-serif',
@@ -139,11 +204,37 @@ export const useStyles = makeStyles({
     lineHeight: '150%',
     textAlign: 'center',
     color: COLORS.GREY.LIGHT,
-    margin: '0 0 55px 0'
+    margin: '0 0 55px 0',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 18,
+    }
   },
   foxLogo: {
     width: 160,
-    margin: '0 auto'
+    margin: '0 auto',
+
+    [BREAKPOINTS.DESKTOP]: {
+      position: 'absolute',
+      width: 520,
+      height: 520,
+      top: 80,
+      left: -260,
+    }
+  },
+  backdrop: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      position: 'fixed',
+      zIndex: 9,
+      top: 0,
+      left: 0,
+      right: 0,
+      height: "100vh",
+    }
   }
 });
 

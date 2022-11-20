@@ -58,7 +58,8 @@ export const useStyles = makeStyles({
     [BREAKPOINTS.DESKTOP]: {
       display: 'flex',
       marginLeft: 172,
-
+      justifyContent: 'space-between',
+      width: 875,
     }
   },
   myNodeEnter: {
@@ -103,10 +104,13 @@ export const useStyles = makeStyles({
     fontFamily: 'Roboto, san-serif',
     fontWeight: 700,
     fontSize: 16,
+    lineHeight: '16px',
     color: COLORS.WHITE,
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 132,
+    height: 32,
 
     '& svg': {
       marginLeft: 10,
@@ -114,13 +118,19 @@ export const useStyles = makeStyles({
 
     [BREAKPOINTS.DESKTOP]: {
       marginBottom: 0,
+      cursor: 'pointer',
+      width: 200,
+      '&:hover': {
+        borderBottom: `1px solid ${COLORS.WHITE}`
+      }
     }
   },
   btnContainer: {
     display: 'flex',
+    alignItems: 'center',
 
     [BREAKPOINTS.DESKTOP]: {
-      marginRight: 96,
+      // marginRight: 96,
     }
   },
   separator: {
@@ -157,8 +167,19 @@ export const useStyles = makeStyles({
     [BREAKPOINTS.DESKTOP]: {
       display: 'flex',
       gap: 32,
-      marginRight: 96,
+      fontFamily: 'Roboto, sans-serif',
+      fontWeight: 400,
+      fontSize: 16,
+      lineHeight: '100%',
+      color: COLORS.GREY.LIGHT,
+      alignItems: 'center',
     }
   },
+  desctopMenuItem: {
+    '&:hover, &:focus': {
+      borderBottom: `1px solid ${COLORS.WHITE}`,
+      color: COLORS.WHITE
+    }
+  }
 });
 

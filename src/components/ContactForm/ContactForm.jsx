@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useStyles } from './ContactForm.styles';
 import { useTranslation } from 'react-i18next';
-import fox from 'assets/images/Fox.png';
+import { ReactComponent as FoxIcon } from 'assets/icons/foxIcon.svg';
 import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
 import {tel} from 'helpers/constants'
 import 'utils/i18next';
@@ -40,7 +40,7 @@ function ContactForm() {
           <p className={s.successDescription}>{t("contactModal.description")}</p>
           <p className={s.phoneContainer}><PhoneIcon className={s.phoneIcon} />{tel}</p>
           <p className={s.successRequest}>{t("contactModal.request")}</p>
-          <img src={fox} alt="fox-logo" className={s.foxLogo}></img>
+          <FoxIcon className={s.foxLogo}/>
         </div>
         :
         <>

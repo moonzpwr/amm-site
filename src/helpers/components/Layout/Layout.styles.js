@@ -12,6 +12,7 @@ export const useStyles = makeStyles({
     
     [BREAKPOINTS.DESKTOP]: {
       maxWidth: 1170,
+      overflow: 'hidden'
     }
   },
 });
