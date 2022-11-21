@@ -3,7 +3,7 @@ import { COLORS } from 'helpers/colors';
 export const customStyles = {
   control: (provided, state) => ({
     ...provided,
-    width: 320,
+    width: '100%',
     border: 'none',
     borderRadius: 0,
     marginBottom: 40,
@@ -49,7 +49,7 @@ export const customStyles = {
   }),
   menu: (provided) => ({
     ...provided,
-    width: 320,
+    width: '100%',
     backgroundColor: COLORS.BLACK.PRIMARY,
     overflow: 'hidden',
   }),

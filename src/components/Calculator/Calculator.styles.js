@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
 export const useStyles = makeStyles({
@@ -17,6 +17,10 @@ export const useStyles = makeStyles({
     textAlign: 'center',
     letterSpacing: '0.07em',
     margin: '0 0 20px 0',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 36,
+    }
   },
   descriptionAnimation: {
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -37,6 +41,10 @@ export const useStyles = makeStyles({
     lineHeight: '150%',
     textAlign: 'center',
     margin: '0 0 55px 0',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 24,
+    }
   },
   radioContainer: {
     display: 'flex',
@@ -44,8 +52,13 @@ export const useStyles = makeStyles({
     marginBottom: 55, 
     justifyContent: 'space-between',
   },
-  calsulatorForm: {
+  calculatorForm: {
     marginBottom: 130,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 575,
+      marginBottom: 0
+    }
   },
   typeOfContent: {
     position: 'absolute',
@@ -85,6 +98,11 @@ export const useStyles = makeStyles({
       width: 5,
       height: 10,
       border: `1px solid ${COLORS.WHITE}`,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 22,
+      lineHeight: '100%'
     }
   },
   formTitle: {
@@ -124,12 +142,29 @@ export const useStyles = makeStyles({
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 700,
     fontSize: 18,
+    width: '100%',
     color: COLORS.BLACK.PRIMARY,
     backgroundColor: COLORS.WHITE,
     border: 'none',
     padding: '16px 66px',
     '&:active': {
       backgroundColor: COLORS.GREY.LIGHT
+    }
+  },
+  calculatorImg: {
+    display: 'none',
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      width: 496,
+      height: 496,
+    }
+  },
+  formContainer: {
+    width: '100%',
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 90,
     }
   },
   calculatedBlock: {
@@ -140,6 +175,13 @@ export const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: 28,
+
+    [BREAKPOINTS.DESKTOP]: {
+      marginTop: 0,
+      flexDirection: 'row',
+      gap: 0,
+      padding: 0,
+    }
   },
   finalPrice: {
     fontFamily: 'Furore, sans-serif',
@@ -148,17 +190,68 @@ export const useStyles = makeStyles({
     lineHeight: '100%',
     letterSpacing: '0.07em',
     marginBottom: 12,
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'none'
+    }
+  },
+  finalPriceDesctop: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      fontFamily: 'Furore, sans-serif',
+      fontWeight: 400,
+      fontSize: 40,
+      lineHeight: '100%',
+      letterSpacing: '0.07em',
+    }
+  },
+  finalPriceWrapper: {
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'flex',
+      gap: 25,
+      alignItems: 'center',
+      marginBottom: 28,
+    }
   },
   disclaimerTitle: {
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 700,
     fontSize: 16,
     lineHeight: '150%',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'none'
+    }
+  },
+  disclaimerTitleDesctop: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      fontFamily: 'Roboto, sans-serif',
+      fontWeight: 400,
+      fontSize: 16,
+      lineHeight: '150%',
+    }
   },
   videoOptionsContainer: {
     '& p': {
       display: 'flex',
       justifyContent: 'space-between'
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+       borderRight: `1px solid ${COLORS.GREY.PRIMARY}`,
+       width: 398,
+       padding: 28,
+       flexShrink: 0
+    }
+  },
+  finalpriceContainer: {
+    [BREAKPOINTS.DESKTOP]: {
+      padding: 28,
     }
   },
   videoOptionsValue: {
@@ -186,12 +279,21 @@ export const useStyles = makeStyles({
     fontSize: 16,
     lineHeight: '150%',
     width: 72,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 'auto'
+    }
   },
   videoDisclaimer: {
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 400,
     fontSize: 16,
     lineHeight: '150%',
+
+    [BREAKPOINTS.DESKTOP]: {
+      marginBottom: 28,
+      fontSize: 18,
+    }
   },
   modalBtn: {
     height: 50,

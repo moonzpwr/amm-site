@@ -2,16 +2,16 @@ import { useStyles } from './Calculator.styles';
 import { useTranslation } from 'react-i18next';
 import Select from 'react-select'
 import 'utils/i18next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {useDurationOptions} from './hooks/useDurationOptions';
 import { subTypeOfContentConst } from './constants/subTypeOfContent';
 import get from 'lodash/get';
-import { useEffect } from 'react';
 import { useTypeOfContentOptions } from './hooks/useTypeOfContentOptions';
 import { useImportantOptions } from './hooks/useImportantOptions';
 import { customStyles } from 'styles/customStyles';
 import Modal from 'components/Modal/Modal';
 import { useInView } from 'react-intersection-observer';
+import calculatorPhoto from 'assets/images/calculatorPhoto.jpg'
 import classNames from 'classnames';
 
 function Calculator() {
@@ -90,82 +90,91 @@ function Calculator() {
     <div className={s.root} id='priceCalculator'>
       <h2 className={classNames(s.title, {[s.titleAnimation]: isTitleShown})} ref={titleRef}>{t('calculator.title')}</h2>
       <p className={classNames(s.description, {[s.descriptionAnimation]: isDescriptionlShown})} ref={descriptionRef}>{t('calculator.subTitle')}</p>
-      <form className={s.calsulatorForm}>
-        <div className={s.radioContainer}>
-          <label className={s.radioLabel}>
-            {t('calculator.video')}
-            <input defaultChecked={typeOfContent==='video'} type='radio' name='contentType' value='video' className={s.typeOfContent} onClick={(e) => handleContentTypeClick(e)} />
-            <span className={s.checkmark}></span>
-            <p className={s.checkmarkInner}></p>
-          </label>
-          <label className={s.radioLabel}>
-            {t('calculator.animation')}
-            <input defaultChecked={typeOfContent==='animation'} type='radio' name='contentType' value='animation' className={s.typeOfContent} onClick={(e) => handleContentTypeClick(e)}/>
-            <span className={s.checkmark}></span>
-            <p className={s.checkmarkInner}></p>
-          </label>
-        </div>
-        <div className={s.formTitle}>{t('calculator.form')}</div>
-        {typeOfContent === 'video' &&
-          <Select isSearchable={false} styles={customStyles} options={videoSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
-        }
-        {typeOfContent === 'animation' &&
-          <Select isSearchable={false} styles={customStyles} options={animationSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
-        }
-        {subTypeOfContent && subTypeOfContent !== subTypeOfContentConst.tiktokVideo &&
-          <>
-            <div className={s.formTitle}>{t('calculator.duration')}</div>
-            <Select isSearchable={false} styles={customStyles} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} onChange={(e) => setPrice(e)} />
-          </>   
-        }
-        {subTypeOfContent && 
-          <>
-            <div className={s.formTitle}>{t('calculator.options')}</div>
-            <Select
-              isSearchable={false}
-              styles={customStyles}
-              options={get(importantOptions, subTypeOfContent)}
-              isMulti
-              closeMenuOnSelect={false}
-              blurInputOnSelect={false}
-              placeholder={t('calculator.formPlaceholderOptions')}
-              value={factors}
-              onChange={(e) => setFactors(e)}
-            />
-          </>
-        }
-      </form>
-      {price &&
-        <button className={s.submitBtn} type='button' onClick={() => handleCalculatedIfValid()}>
-          {t('calculator.calculatorBtn')}
-        </button>
-      }
-      {isCalculated && <div className={s.calculatedBlock}>
-        <div className={s.finalPrice}>$ {Math.round(finalPrice / 100) * 100}</div>
-        <div className={s.disclaimerTitle}>{t('calculator.disclaimerTitle')}</div>
-        <div className={s.videoOptionsContainer}>
-          <p>
-            <span className={s.videoOptionsTitle}>{t('calculator.type')}:</span>
-            <span className={s.videoOptionsValue}>{typeOfContent}</span>
-          </p>
-          <p>
-            <span className={s.videoOptionsTitle}>{t('calculator.form')}:</span>
-            <span className={s.videoOptionsValue}>{t(`calculator.${typeOfContent === 'video' ? 'videoOption' : 'animationOtion '}.${subTypeOfContent}`)}</span>
-          </p>
-          <p>
-            <span className={s.videoOptionsTitle}>{t('calculator.duration')}:</span>
-            <span className={s.videoOptionsValue}>{price.label}</span>
-          </p>
-          <p>
-            <span className={s.videoOptionsTitle}>{t('calculator.options')}:</span>
-            <span className={s.optionsValues}>{factors.map((factor, i) => <span key={i}>{factor.label}</span>)}</span>
-          </p>
-        </div>
-        <div className={s.videoDisclaimer}>{t('calculator.disclaimer')}</div>
-        <button className={s.modalBtn} onClick={() => setIsModalOpen(true)}>
-          {t('title.mainBtn')}
-        </button>
-      </div>}
+      <div className={s.formContainer}>
+        <form className={s.calculatorForm}>
+          <div className={s.radioContainer}>
+            <label className={s.radioLabel}>
+              {t('calculator.video')}
+              <input defaultChecked={typeOfContent==='video'} type='radio' name='contentType' value='video' className={s.typeOfContent} onClick={(e) => handleContentTypeClick(e)} />
+              <span className={s.checkmark}></span>
+              <p className={s.checkmarkInner}></p>
+            </label>
+            <label className={s.radioLabel}>
+              {t('calculator.animation')}
+              <input defaultChecked={typeOfContent==='animation'} type='radio' name='contentType' value='animation' className={s.typeOfContent} onClick={(e) => handleContentTypeClick(e)}/>
+              <span className={s.checkmark}></span>
+              <p className={s.checkmarkInner}></p>
+            </label>
+          </div>
+          <div className={s.formTitle}>{t('calculator.form')}</div>
+          {typeOfContent === 'video' &&
+            <Select isSearchable={false} styles={customStyles} options={videoSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
+          }
+          {typeOfContent === 'animation' &&
+            <Select isSearchable={false} styles={customStyles} options={animationSelectOptions} placeholder={t('calculator.formPlaceholderType')} onChange={(e)=> handleSubTypeOfContentChange(e)}/>
+          }
+          {subTypeOfContent && subTypeOfContent !== subTypeOfContentConst.tiktokVideo &&
+            <>
+              <div className={s.formTitle}>{t('calculator.duration')}</div>
+              <Select isSearchable={false} styles={customStyles} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} onChange={(e) => setPrice(e)} />
+            </>   
+          }
+          {subTypeOfContent && 
+            <>
+              <div className={s.formTitle}>{t('calculator.options')}</div>
+              <Select
+                isSearchable={false}
+                styles={customStyles}
+                options={get(importantOptions, subTypeOfContent)}
+                isMulti
+                closeMenuOnSelect={false}
+                blurInputOnSelect={false}
+                placeholder={t('calculator.formPlaceholderOptions')}
+                value={factors}
+                onChange={(e) => setFactors(e)}
+              />
+            </>
+          }
+          {price.value !== 0 &&
+            <button className={s.submitBtn} type='button' onClick={() => handleCalculatedIfValid()}>
+              {t('calculator.calculatorBtn')}
+            </button>
+          }
+        </form>
+        <img src={calculatorPhoto} alt='mobile phone' className={s.calculatorImg}></img>
+        {isCalculated && <div className={s.calculatedBlock}>
+          <div className={s.finalPrice}>$ {finalPrice > 1000 ? Math.round(finalPrice / 100) * 100 : Math.round(finalPrice / 10) * 10}</div>
+          <div className={s.disclaimerTitle}>{t('calculator.disclaimerTitle')}</div>
+          <div className={s.videoOptionsContainer}>
+            <p>
+              <span className={s.videoOptionsTitle}>{t('calculator.type')}:</span>
+              <span className={s.videoOptionsValue}>{typeOfContent}</span>
+            </p>
+            <p>
+              <span className={s.videoOptionsTitle}>{t('calculator.form')}:</span>
+              <span className={s.videoOptionsValue}>{t(`calculator.${typeOfContent === 'video' ? 'videoOption' : 'animationOtion '}.${subTypeOfContent}`)}</span>
+            </p>
+            <p>
+              <span className={s.videoOptionsTitle}>{t('calculator.duration')}:</span>
+              <span className={s.videoOptionsValue}>{price.label}</span>
+            </p>
+            <p>
+              <span className={s.videoOptionsTitle}>{t('calculator.options')}:</span>
+              <span className={s.optionsValues}>{factors.map((factor, i) => <span key={i}>{factor.label}</span>)}</span>
+            </p>
+          </div>
+          <div className={s.finalpriceContainer}>
+            <div className={s.finalPriceWrapper}>
+              <div className={s.finalPriceDesctop}>$ {finalPrice > 1000 ? Math.round(finalPrice / 100) * 100 : Math.round(finalPrice / 10) * 10}</div>
+              <div className={s.disclaimerTitleDesctop}>{t('calculator.disclaimerTitle')}</div>
+            </div>
+            <div className={s.videoDisclaimer}>{t('calculator.disclaimer')}</div>
+            <button className={s.modalBtn} onClick={() => setIsModalOpen(true)}>
+              {t('title.mainBtn')}
+            </button>
+          </div>
+        </div>}
+      </div>
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
