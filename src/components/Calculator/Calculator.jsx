@@ -141,7 +141,7 @@ function Calculator() {
             </button>
           }
         </form>
-        <img src={calculatorPhoto} alt='mobile phone' className={s.calculatorImg}></img>
+        <img src={calculatorPhoto} alt='mobile phone' className={classNames(s.calculatorImg, {[s.calculatorImgAnimation]: isDescriptionlShown })}></img>
         {isCalculated && <div className={s.calculatedBlock}>
           <div className={s.finalPrice}>$ {finalPrice > 1000 ? Math.round(finalPrice / 100) * 100 : Math.round(finalPrice / 10) * 10}</div>
           <div className={s.disclaimerTitle}>{t('calculator.disclaimerTitle')}</div>

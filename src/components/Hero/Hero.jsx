@@ -27,10 +27,14 @@ function Hero() {
       </button>
       <div className={s.ribbonContainer}>
         <Marquee className={s.blackRibbon} gradient={false}>
-          {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
+          <span className={s.blackRibbonText}>
+           {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
+          </span>
         </Marquee>
         <Marquee className={s.whiteRibbon} direction='right' gradient={false}>
-          {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
+          <span className={s.whiteRibbonText}>
+            {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
+          </span>
         </Marquee> 
       </div>
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />

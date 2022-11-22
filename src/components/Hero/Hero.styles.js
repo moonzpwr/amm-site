@@ -34,6 +34,7 @@ export const useStyles = makeStyles({
       width: 1000,
       margin: '140px auto 0 auto',
       animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '3s',
       fontFamily: 'Furore, sans-serif',
       fontWeight: 400,
       fontSize: 60,
@@ -63,6 +64,7 @@ export const useStyles = makeStyles({
       lineHeight: '150%',
       textAlign: 'center',
       margin: '20px 0 40px 0',
+      animationDelay: '3.5s',
     }
   },
   modalBtn: {
@@ -86,6 +88,7 @@ export const useStyles = makeStyles({
 
     [BREAKPOINTS.DESKTOP]: {
       marginBottom: 220,
+      animationDelay: '4s',
     }
   },
   ribbonContainer: {
@@ -112,10 +115,26 @@ export const useStyles = makeStyles({
     [BREAKPOINTS.DESKTOP]: {
       width: 1895,
       height: 31,
+      
       fontSize: 24,
       transform: 'rotate(-4deg)',
       bottom: 90,
+      animation: '$blackRibbonTextFadeIn 1s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
     }
+  },
+  blackRibbonText: {
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$blackRibbonFadeIn 3s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+    }
+  },
+  '@keyframes blackRibbonFadeIn': {
+    '0%': { transform: 'translate(1000px)', opacity: 0},
+    '50%': { transform: 'translate(1000px)', opacity: 0},
+    '100%': {transform: 'translate(0)', opacity: 1}
+  },
+  '@keyframes blackRibbonTextFadeIn': {
+    from: { transform: 'translate(1000px)'},
+    to: { transform: 'translate(-25px) rotate(-4deg)'},
   },
   whiteRibbon: {
     whiteSpace: 'nowrap',
@@ -140,8 +159,23 @@ export const useStyles = makeStyles({
       height: 31,
       fontSize: 24,
       transform: 'rotate(4deg)',
-      bottom: 30
+      bottom: 30,
+      animation: '$whiteRibbonTextFadeIn 1s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
     }
+  },
+  '@keyframes whiteRibbonTextFadeIn': {
+    from: { transform: 'translate(-1000px)'},
+    to: { transform: 'translate(30px) rotate(4deg)'},
+  },
+  whiteRibbonText: {
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$whiteRibbonFadeIn 3s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+    }
+  },
+  '@keyframes whiteRibbonFadeIn': {
+    '0%': { transform: 'translate(-1000px)', opacity: 0},
+    '50%': { transform: 'translate(-1000px)', opacity: 0},
+    '100%': {transform: 'translate(0)', opacity: 1}
   },
   elipse: {
     display: 'none',

@@ -159,6 +159,12 @@ export const useStyles = makeStyles({
       height: 496,
     }
   },
+  calculatorImgAnimation:{
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '1.5s',
+    }
+  },
   formContainer: {
     width: '100%',
     [BREAKPOINTS.DESKTOP]: {
