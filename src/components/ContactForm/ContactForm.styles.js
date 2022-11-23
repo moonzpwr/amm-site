@@ -143,77 +143,87 @@ export const useStyles = makeStyles({
     margin: '0 auto'
   },
   elispse: {
-    position: 'absolute',
-    width: 152,
-    height: 245,
-    left: 870,
-    top: 220,
-    background: '#DC1515',
-    filter: 'blur(100px)',
-    borderRadius: '50%',
-    animation: '$Ellipse 13000ms 0ms linear infinite'
+    dispaly: 'none',
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      position: 'absolute',
+      width: 152,
+      height: 245,
+      left: 870,
+      top: 220,
+      background: '#DC1515',
+      filter: 'blur(100px)',
+      transform: 'translate3d(0, 0, 0)',
+      borderRadius: '50%',
+      animation: '$Ellipse 13000ms 0ms linear infinite'
+    }
   },
   '@keyframes Ellipse': {
     '0%': {
-      left: 810,
+      left: 710,
       top: 160,
     },
     '20%': {
-      left: 870,
+      left: 770,
       top: 160,
     },
     '40%': {
-      left: 835,
+      left: 735,
       top: 160,
     },
     '60%': {
-      left: 815,
+      left: 715,
       top: 160,
     },
     '80%': {
-      left: 748,
+      left: 648,
       top: 130,
     },
     '100%': {
-      left: 810,
+      left: 710,
       top: 160,
     },
   },
   elipseTwo: {
-    position: 'absolute',
-    width: 137,
-    height: 196,
-    left: 820,
-    top: 160,
-    borderRadius: '50%',
-    background: '#C99C9C',
-    filter: 'blur(60px)',
-    animation: '$Ellipse2 13000ms 0ms linear infinite'
+    display: 'none',
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'block',
+      position: 'absolute',
+      width: 137,
+      height: 196,
+      left: 820,
+      top: 160,
+      borderRadius: '50%',
+      background: '#C99C9C',
+      filter: 'blur(60px)',
+      transform: 'translate3d(0, 0, 0)',
+      animation: '$Ellipse2 13000ms 0ms linear infinite'
+    }
   },
 
   '@keyframes Ellipse2': {
     '0%': {
-      left: 810,
+      left: 710,
       top: 160,
     },
     '20%': {
-      left: 870,
+      left: 770,
       top: 300,
     },
     '40%': {
-      left: 960,
+      left: 860,
       top: 320,
     },
     '60%': {
-      left: 940,
+      left: 840,
       top: 240,
     },
     '80%': {
-      left: 840,
+      left: 740,
       top: 210,
     },
     '100%': {
-      left: 810,
+      left: 710,
       top: 160,
     },
   },

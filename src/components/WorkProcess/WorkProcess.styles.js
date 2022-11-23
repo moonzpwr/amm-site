@@ -39,24 +39,34 @@ export const useStyles = makeStyles({
     }
   },
   titleAnimation:{
-    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-    animationDelay: '0.5s',
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '0.5s',
+    }
   },
   cardOneAnimation: {
-    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-    animationDelay: '1s',
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '1s',
+    }
   },
   cardTwoAnimation: {
-    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-    animationDelay: '1.5s',
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '1.5s',
+    }
   },
   cardThreeAnimation: {
-    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-    animationDelay: '2s',
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '2s',
+    }
   },
   cardFourAnimation: {
-    animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-    animationDelay: '2.5s',
+    [BREAKPOINTS.DESKTOP]: {
+      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animationDelay: '2.5s',
+    }
   },
   '@keyframes fadeIn': {
     from: { transform: 'scale(0.5)', opacity: 0 },
