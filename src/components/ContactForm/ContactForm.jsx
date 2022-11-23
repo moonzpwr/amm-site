@@ -34,8 +34,10 @@ function ContactForm() {
 
   return (
     <div className={s.root}>
+      <div className={s.elipseTwo}></div>
+      <div className={s.elispse}></div>
       {isSubmited ?
-        <div>
+        <div className={s.submittedContainer}>
           <h2 className={s.successTitle}>{t("contactModal.successTitle")}</h2>
           <p className={s.successDescription}>{t("contactModal.description")}</p>
           <p className={s.phoneContainer}><PhoneIcon className={s.phoneIcon} />{tel}</p>
@@ -43,9 +45,9 @@ function ContactForm() {
           <FoxIcon className={s.foxLogo}/>
         </div>
         :
-        <>
-          <h2>{t('contactForm.title')}</h2>
-          <p>{t('contactForm.description')}</p>
+        <div className={s.formContainer}>
+          <h2 className={s.title}>{t('contactForm.title')}</h2>
+          <p className={s.description}>{t('contactForm.description')}</p>
           <form className={s.contactForm} name="contactForm" action='/contactForm' method="POST" data-netlify="true" ref={myForm}>
             <input type='hidden' name='form-name' value='contactForm'/>
             <label>
@@ -64,7 +66,7 @@ function ContactForm() {
               {t("contactModal.btn")}
             </button>
           </form>
-        </>
+        </div>
       }
     </div>
   );

@@ -34,8 +34,8 @@ function Case() {
     <div className={s.root} id='caseStudies'>
       <h2 className={classNames(s.title, {[s.titleAnimation]: isTitlelShown})} ref={titleRef}>{t('caseStudies.title')}</h2>
       <div className={classNames({[s.descriptionAnimation]: isDescriptionShown})} ref={descriptionRef}>
-      <p className={s.description}>{t('caseStudies.description')}</p>
-      <a href='https://www.youtube.com/channel/UCDpiH6JPPe3-FBqhRZG-96g' target="_blanc" className={s.link}>{t('caseStudies.link')}</a>
+        <p className={s.description}>{t('caseStudies.description')}</p>
+        <a href='https://www.youtube.com/channel/UCDpiH6JPPe3-FBqhRZG-96g' target="_blanc" className={s.link}>{t('caseStudies.link')}</a>
       </div>
       <div className={s.card}>
         <div className={s.video} onClick={() => setIsVideoClicked(true)}>
@@ -46,11 +46,13 @@ function Case() {
           }
           {!isVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
         </div>
-        <h3 className={s.cardsTitle}>{t('caseStudies.firstCard.title')}</h3>
-        <div className={s.subTitle}>{t('caseStudies.need')}</div>
-        <div className={s.text}>{t('caseStudies.firstCard.need')}</div>
-        <div className={s.subTitle}>{t('caseStudies.result')}</div>
-        <div className={s.text}>{t('caseStudies.firstCard.result')}</div>
+        <div>
+          <h3 className={s.cardsTitle}>{t('caseStudies.firstCard.title')}</h3>
+          <div className={s.subTitle}>{t('caseStudies.need')}</div>
+          <div className={s.text}>{t('caseStudies.firstCard.need')}</div>
+          <div className={s.subTitle}>{t('caseStudies.result')}</div>
+          <div className={s.text}>{t('caseStudies.firstCard.result')}</div>
+        </div>
       </div>
       <div className={s.card}>
         <div className={s.video} onClick={() => setIsSecondVideoClicked(true)}>
@@ -61,11 +63,13 @@ function Case() {
           }
           {!isSecondVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
         </div>
-        <h3 className={s.cardsTitle}>{t('caseStudies.secondCard.title')}</h3>
-        <div className={s.subTitle}>{t('caseStudies.need')}</div>
-        <div className={s.text}>{t('caseStudies.secondCard.need')}</div>
-        <div className={s.subTitle}>{t('caseStudies.result')}</div>
-        <div className={s.text}>{t('caseStudies.secondCard.result')}</div>
+        <div>
+          <h3 className={s.cardsTitle}>{t('caseStudies.secondCard.title')}</h3>
+          <div className={s.subTitle}>{t('caseStudies.need')}</div>
+          <div className={s.text}>{t('caseStudies.secondCard.need')}</div>
+          <div className={s.subTitle}>{t('caseStudies.result')}</div>
+          <div className={s.text}>{t('caseStudies.secondCard.result')}</div>
+        </div>
       </div>
       <div className={s.card}>
         <div className={s.video} onClick={() => setIsThirdVideoClicked(true)}>
@@ -76,11 +80,13 @@ function Case() {
           }
           {!isThirdVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
         </div>
-        <h3 className={s.cardsTitle}>{t('caseStudies.thirdCard.title')}</h3>
-        <div className={s.subTitle}>{t('caseStudies.need')}</div>
-        <div className={s.text}>{t('caseStudies.thirdCard.need')}</div>
-        <div className={s.subTitle}>{t('caseStudies.result')}</div>
-        <div className={s.text}>{t('caseStudies.thirdCard.result')}</div>
+        <div>
+          <h3 className={s.cardsTitle}>{t('caseStudies.thirdCard.title')}</h3>
+          <div className={s.subTitle}>{t('caseStudies.need')}</div>
+          <div className={s.text}>{t('caseStudies.thirdCard.need')}</div>
+          <div className={s.subTitle}>{t('caseStudies.result')}</div>
+          <div className={s.text}>{t('caseStudies.thirdCard.result')}</div>
+        </div>
       </div>
     </div>
   );

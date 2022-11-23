@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
 export const useStyles = makeStyles({
@@ -10,13 +10,24 @@ export const useStyles = makeStyles({
     position: 'relative',
     width: 320,
     height: 190,
-    backgroundColor: COLORS.BLACK.PRIMARY
+    backgroundColor: COLORS.BLACK.PRIMARY,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 575,
+      height: 324,
+      flexShrink: 0,
+    }
   },
   preview: {
     border: 'none',
     width: 320,
     height: 190,
     objectFit: 'cover',
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 575,
+      height: 324,
+    }
   },
   videoBtn: {
     cursor: 'pointer',
@@ -35,6 +46,12 @@ export const useStyles = makeStyles({
     },
     '&:active svg': {
       fill: COLORS.GREY.LIGHT,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      '& svg': {
+        width: 100,
+      },
     }
   },
   title: {
@@ -44,10 +61,20 @@ export const useStyles = makeStyles({
     lineHeight: '150%',
     textAlign: 'center',
     letterSpacing: '0.07em',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 36,
+    }
   },
   descriptionAnimation: {
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
     animationDelay: '1s',
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 590,
+      textAlign: 'center',
+      margin: '0 auto 80px auto'
+    }
   },
   titleAnimation: {
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
@@ -63,7 +90,12 @@ export const useStyles = makeStyles({
     fontSize: 18,
     lineHeight: '150%',
     textAlign: 'center',
-    margin: '20px 0 0 0'
+    margin: '20px 0 0 0',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 24,
+      display: 'inline',
+    }
   },
   link: {
     fontFamily: 'Roboto, sans-serif',
@@ -74,6 +106,13 @@ export const useStyles = makeStyles({
     display: 'block',
     textDecoration: 'underline',
     marginBottom: 40,
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 24,
+      display: 'inline',
+      marginLeft: 10,
+      fontWeight: 600,
+    }
   },
   card: {
     borderBottom: `1px solid ${COLORS.GREY.PRIMARY}`,
@@ -81,6 +120,16 @@ export const useStyles = makeStyles({
 
     '&:not(:last-child)': {
       marginBottom: 40,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'flex',
+      gap: 48,
+      borderBottom: 'none',
+
+      '&:nth-child(even)': {
+        flexDirection: 'row-reverse'
+      }
     }
   },
   cardsTitle: {
@@ -90,6 +139,11 @@ export const useStyles = makeStyles({
     lineHeight: '150%',
     textAlign: 'center',
     margin: '40px 0 20px 0',
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 22,
+      margin: '20px 0 20px 0',
+    }
   },
   subTitle: {
     fontFamily: 'Roboto, sans-serif',
@@ -97,6 +151,10 @@ export const useStyles = makeStyles({
     fontSize: 16,
     lineHeight: '150%',
     marginBottom: 8,
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 22,
+    }
   },
   text: {
     fontFamily: 'Roboto, sans-serif',
@@ -106,6 +164,10 @@ export const useStyles = makeStyles({
 
     '&:not(:last-child)': {
       marginBottom: 12,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 16,
     }
   }
 });

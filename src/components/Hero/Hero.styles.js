@@ -1,6 +1,5 @@
 import { makeStyles } from '@mui/styles';
 import { BREAKPOINTS } from 'helpers/breakpoints';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
 export const useStyles = makeStyles({
