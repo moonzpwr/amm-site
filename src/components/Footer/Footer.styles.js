@@ -12,6 +12,16 @@ export const useStyles = makeStyles({
     
     [BREAKPOINTS.DESKTOP] : {
       maxWidth: 1440,
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gridTemplateRows: '50px 50px',
+    }
+  },
+  adressContainer: {
+    [BREAKPOINTS.DESKTOP]: {
+      gridColumn: 3, 
+      gridRow: 1,
+      alignSelf: 'center'
     }
   },
   separator: {
@@ -19,8 +29,12 @@ export const useStyles = makeStyles({
     top: -52,
     left: -100,
     zIndex: 10,
-    width: '500px',
+    width: 500,
     borderTop: `1px solid ${COLORS.GREY.PRIMARY}`,
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 2700,
+    }
   },
   logoIcon: {
     width: 102,
@@ -30,6 +44,9 @@ export const useStyles = makeStyles({
     '& svg': {
       width: 102,
       height: 56,
+    },
+    [BREAKPOINTS.DESKTOP]: {
+      alignSelf: 'center'
     }
   },
   icon: {
@@ -39,6 +56,10 @@ export const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-around',
     margin: '40px 0',
+
+    [BREAKPOINTS.DESKTOP]: {
+      margin: 0,
+    }
   },
   contacts: {
     fontFamily: 'Roboto, sans-serif',
@@ -54,6 +75,11 @@ export const useStyles = makeStyles({
     fontSize: 14,
     margin: 0,
     textAlign: 'center',
+
+    [BREAKPOINTS.DESKTOP]: {
+      gridColumn: 2, 
+      gridRow: 2,
+    }
   }
 });
 

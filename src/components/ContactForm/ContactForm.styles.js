@@ -74,6 +74,11 @@ export const useStyles = makeStyles({
 
     '&:hover, &:focus': {
       borderBottom: `1px solid ${COLORS.WHITE}`,
+    },
+
+    '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
     }
   },
   formContainer: {
