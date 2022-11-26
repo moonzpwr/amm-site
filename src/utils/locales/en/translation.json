@@ -27,7 +27,8 @@
   },
   "whoWeAre": {
     "label": "Who are we?",
-    "title": "We are a video agency. We create content that will work efficiently and effectively for you 24/7.",
+    "title": "We are a video agency.",
+    "description": " We create content that will work efficiently and effectively for you 24/7.",
     "reasonList": {
       "firstItem": "We develop ideas and scenarios for future animation and video projects",
       "secondItem":  "We create communication strategies",
@@ -151,6 +152,10 @@
   },
   "workProcess": {
     "title": "Stages of work",
+    "someTitles": {
+      "one":"Production",
+      "two":"Post-production"
+    },
     "first": {
       "title": "Questionnaire",
       "firstItem": "Interview",
@@ -164,13 +169,11 @@
       "fifthItem": "Creation of a storyboard"
     },
     "third": {
-      "title:": "Production",
       "firstItem": "Filming",
       "secondItem": "Creation of 2D illustrations",
       "thirdItem": "Creation of 3D models"
     },
     "fourth": {
-      "title:": "Post-production",
       "firstItem": "Post-processing",
       "secondItem": "Motion design",
       "thirdItem": "Video editing",

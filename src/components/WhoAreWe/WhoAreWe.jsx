@@ -35,7 +35,10 @@ function WhoAreWe() {
           </div>
         </div>
         <div className={s.rightBlock}>
-          <h2 className={classNames(s.title, {[s.titleAnimation]: isTitlelShown})} ref={titleRef}>{t('whoWeAre.title')}</h2>
+          <div className={classNames(s.title, { [s.titleAnimation]: isTitlelShown })} ref={titleRef}>
+            {t('whoWeAre.title')}
+            <div>{t('whoWeAre.description')}</div> 
+          </div>
           <ul className={s.reasonList}>
             <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.firstItem')}</li>
             <li className={s.reasonItem}><StarIcon className={s.starIcon}/>{t('whoWeAre.reasonList.secondItem')}</li>

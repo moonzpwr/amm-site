@@ -53,18 +53,18 @@ function WorkProcess() {
           <img src={imageThree} alt='number three' className={s.cardsNumberImg}/>
           <div className={s.desctopImgPlaceholderThree}></div>
           <div className={s.cardsList}>
-            <h3 className={s.cardsItemTitle}>{t('workProcess.first.title')}</h3>
-            <p className={s.cardsListItem}>{t('workProcess.first.firstItem')}</p>
-            <p className={s.cardsListItem}>{t('workProcess.first.secondItem')}</p>
+            <h3 className={s.cardsItemTitle}>{t('workProcess.someTitles.one')}</h3>
+            <p className={s.cardsListItem}>{t('workProcess.third.firstItem')}</p>
+            <p className={s.cardsListItem}>{t('workProcess.third.secondItem')}</p>
           </div>
         </div>
         <div className={classNames(s.cardsItem, {[s.cardFourAnimation]: isTitlelShown})}>
           <img src={imageFour} alt='number four' className={s.cardsNumberImg}/>
           <div className={s.desctopImgPlaceholderFour}></div>
           <div className={s.cardsList}>
-            <h3 className={s.cardsItemTitle}>{t('workProcess.first.title')}</h3>
-            <p className={s.cardsListItem}>{t('workProcess.first.firstItem')}</p>
-            <p className={s.cardsListItem}>{t('workProcess.first.secondItem')}</p>
+            <h3 className={s.cardsItemTitle}>{t('workProcess.someTitles.two')}</h3>
+            <p className={s.cardsListItem}>{t('workProcess.fourth.firstItem')}</p>
+            <p className={s.cardsListItem}>{t('workProcess.fourth.secondItem')}</p>
           </div>
         </div>
       </div>
