@@ -1,40 +1,66 @@
 import { useStyles } from './Modal.styles';
 import { ReactComponent as CloseIcon } from 'assets/icons/closeIcon.svg';
 import { ReactComponent as PhoneIcon } from 'assets/icons/phoneIcon.svg';
-import { ReactComponent as PigIcon } from 'assets/icons/pigIcon.svg';
-import { ReactComponent as FoxIcon } from 'assets/icons/foxIcon.svg';
+import pigImg from 'assets/images/pigImg.png';
+import foxImg from 'assets/images/foxImg.png';
+import pigImgDesc from 'assets/images/pigImgDesc.png';
+import foxImgDesc from 'assets/images/foxImgDesc.png';
 import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { useTranslation } from 'react-i18next';
+import classNames from 'classnames';
 import 'utils/i18next';
 import { tel } from 'helpers/constants';
+import { useEffect } from 'react';
 
 function Modal({isModalOpen, setIsModalOpen}) {
   const s = useStyles();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmited, setIsSubmited] = useState(false);
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [isPhoneValid, setIsPhoneValid] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isDirty, setIsDirty] = useState(false);
   const myForm = useRef()
 
   const handleSubmitClick = (e) => {
     e.preventDefault();
-    const formData = new FormData(myForm.current);
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
-
-    setIsSubmited(true);//TODO: implement validation
+    setIsDirty(true);
+    if (isNameValid && isPhoneValid && isEmailValid) {
+      const formData = new FormData(myForm.current);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => {
+          console.log("Form successfully submitted");
+          setIsSubmited(true);
+          setIsDirty(false);
+        })
+        .catch((error) => alert(error));
+    }
   }
+
+  useEffect(() => {
+    name.length > 2 ? setIsNameValid(true) : setIsNameValid(false);
+    email.length > 5 && email.includes('@') ?  setIsEmailValid(true) :  setIsEmailValid(false);
+    phone.toString().length >= 10 && phone.toString().length <= 13 ? setIsPhoneValid(true) : setIsPhoneValid(false);
+  }, [name, email, phone])
   
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setIsSubmited(false);
+    setName('');
+    setPhone('');
+    setEmail('');
+    setIsNameValid(false);
+    setIsPhoneValid(false);
+    setIsEmailValid(false);
+    setIsDirty(false);
   }
  
   return (
@@ -55,25 +81,30 @@ function Modal({isModalOpen, setIsModalOpen}) {
               <p className={s.successDescription}>{t("contactModal.description")}</p>
               <p className={s.phoneContainer}><PhoneIcon className={s.phoneIcon} />{tel}</p>
               <p className={s.successRequest}>{t("contactModal.request")}</p>
-              <FoxIcon className={s.foxLogo}/>
+              <img src={foxImg} className={s.foxLogo} alt='fox mascot'/>
+              <img src={foxImgDesc} className={s.foxLogoDesc} alt='fox mascot'/>
             </div>
             :
             <div className={s.modalContainer}>
-              <PigIcon className={s.pigLogo} />
+              <img src={pigImg} className={s.pigLogo} alt='pig mascot'/>
+              <img src={pigImgDesc} className={s.pigLogoDesc} alt='pig mascot'/>
               <h2 className={s.modalTitle}>{t("contactModal.title")}</h2>
               <form className={s.contactForm} name="modalForm" method="POST" ref={myForm}>
                 <input type='hidden' name='form-name' value='modalForm'/>
-                <label>
+                <label className={classNames({[s.errorState]: !isNameValid && isDirty})}>
                   <span>{ t("contactModal.name") }</span>
-                  <input required type="text" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)}/>
+                  <input required type="text" autoComplete="off" className={s.contactInput} placeholder={t('contactModal.namePlaceholder')} name='name' value={name} onChange={(e) => setName(e.target.value)} />
+                  {!isNameValid && isDirty && <span className={s.error}>{t("error")}</span>}
                 </label>
-                <label>
+                <label className={classNames({[s.errorState]: !isPhoneValid && isDirty})}>
                   <span>{ t("contactModal.phoneNumber") }</span>
-                  <input required type="number" className={s.contactInput} name='phone' value={phone} onChange={(e) => setPhone(e.target.value)}/>
+                  <input required type="number" autoComplete="off" className={s.contactInput} name='phone' placeholder={t('contactModal.phoneNumberPlaceholder')} value={phone} onChange={(e) => setPhone(e.target.value)} />
+                  {!isPhoneValid && isDirty && <span className={s.error}>{t("error")}</span>}
                 </label>
-                <label>
+                <label className={classNames({[s.errorState]: !isEmailValid && isDirty})}>
                   <span>{ t("contactModal.email") }</span>
-                  <input required type="email" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                  <input required type="email" autoComplete="off" className={s.contactInput} placeholder={t('contactModal.emailPlaceholder')} name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  {!isEmailValid && isDirty && <span className={s.error}>{t("error")}</span>}
                 </label>
                 <button className={s.submitBtn} type='button' onClick={(e) => handleSubmitClick(e)}>
                   {t("contactModal.btn")}

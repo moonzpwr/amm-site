@@ -44,7 +44,7 @@ function Case() {
             :
             <img className={s.preview} src='https://i.ytimg.com/vi/i45glLZVEUs/hqdefault.jpg' alt='video_preview'/>
           }
-          {!isVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
+          {!isVideoClicked && <button type='button' className={s.videoBtn} aria-label='play'><PlayIcon/></button>}
         </div>
         <div>
           <h3 className={s.cardsTitle}>{t('caseStudies.firstCard.title')}</h3>
@@ -61,7 +61,7 @@ function Case() {
             :
             <img className={s.preview} src='https://i.ytimg.com/vi/7i5gG8rnpcA/hqdefault.jpg' alt='video_preview'/>
           }
-          {!isSecondVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
+          {!isSecondVideoClicked && <button type='button' className={s.videoBtn} aria-label='play'><PlayIcon/></button>}
         </div>
         <div>
           <h3 className={s.cardsTitle}>{t('caseStudies.secondCard.title')}</h3>
@@ -78,7 +78,7 @@ function Case() {
             :
             <img className={s.preview} src='https://i.ytimg.com/vi/IrVYH1WYgMk/hqdefault.jpg' alt='video_preview'/>
           }
-          {!isThirdVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
+          {!isThirdVideoClicked && <button type='button' className={s.videoBtn} aria-label='play'><PlayIcon/></button>}
         </div>
         <div>
           <h3 className={s.cardsTitle}>{t('caseStudies.thirdCard.title')}</h3>

@@ -11,6 +11,7 @@
     "name": "Name*",
     "namePlaceholder": "Enter your name",
     "phoneNumber": "Phone number*",
+    "phoneNumberPlaceholder": "example: 0991234567",
     "email": "Do you want to communicate by email?",
     "emailPlaceholder": "Enter your email",
     "btn": "Send",
@@ -215,5 +216,5 @@
   "footer": {
     "rights": "© 2022 AMM Production. All Rights Reserved." 
   },
-  "loader": "Now loading..."
+  "error": "Invalid value"
 }

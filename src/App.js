@@ -1,17 +1,17 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import Loader from "./helpers/components/Loader/Loader";
-import Layout from './helpers/components/Layout/Layout'
-import Header from "./components/Header/Header";
-import Hero from "components/Hero/Hero";
-import WhoAreWe from "components/WhoAreWe/WhoAreWe";
-import Features from "components/Features/Features";
-import OurProducts from "components/OurProducts/OurProducts"; 
-import Calculator from "components/Calculator/Calculator";
-import WorkProcess from "components/WorkProcess/WorkProcess";
-import Case from "components/Case/Case";
-import ContactForm from "components/ContactForm/ContactForm";
-import Clients from "components/Clients/Clients";
-import Footer from "components/Footer/Footer";
+const Layout = lazy(() => import('./helpers/components/Layout/Layout'));
+const Header = lazy(() => import('./components/Header/Header'));
+const Hero = lazy(() => import('components/Hero/Hero'));
+const WhoAreWe = lazy(() => import('components/WhoAreWe/WhoAreWe'));
+const Features = lazy(() => import('components/Features/Features'));
+const OurProducts = lazy(() => import('components/OurProducts/OurProducts'));
+const Calculator = lazy(() => import('components/Calculator/Calculator'));
+const WorkProcess = lazy(() => import('components/WorkProcess/WorkProcess'));
+const Case = lazy(() => import('components/Case/Case'));
+const ContactForm = lazy(() => import('components/ContactForm/ContactForm'));
+const Clients = lazy(() => import('components/Clients/Clients'));
+const Footer = lazy(() => import('components/Footer/Footer'));
 
 function App() {
 

@@ -55,6 +55,11 @@ export const useStyles = makeStyles({
     width: 210,
     margin: '40px auto 20px auto',
 
+    '& img': {
+      width: 168,
+      height: 68,
+    },
+
     [BREAKPOINTS.DESKTOP]: {
       position: 'absolute',
       top: 15,

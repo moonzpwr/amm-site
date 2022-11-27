@@ -81,6 +81,18 @@ export const useStyles = makeStyles({
       margin: 0,
     }
   },
+  errorState: {
+    '& input': {
+      borderBottom: `1px solid ${COLORS.RED.TOMATO}`,
+    },
+  },
+  error: {
+    color: COLORS.RED.TOMATO,
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: 400,
+    fontSize: 14,
+    lineHeight: '100%',
+  },
   formContainer: {
     [BREAKPOINTS.DESKTOP]: {
       width: 575,
@@ -145,7 +157,7 @@ export const useStyles = makeStyles({
   },
   foxLogo: {
     width: 160,
-    margin: '0 auto'
+    margin: '0 auto',
   },
   elispse: {
     dispaly: 'none',

@@ -2,7 +2,7 @@ import { useStyles } from './Calculator.styles';
 import { useTranslation } from 'react-i18next';
 import Select from 'react-select'
 import 'utils/i18next';
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import {useDurationOptions} from './hooks/useDurationOptions';
 import { subTypeOfContentConst } from './constants/subTypeOfContent';
 import get from 'lodash/get';
@@ -31,6 +31,7 @@ function Calculator() {
   const { ref: titleRef, inView: isTitleVisible } = useInView();
   const [isTitleShown, setIsTitleShown] = useState(false);
   const [isDescriptionlShown, setIsDescriptionShown] = useState(false);
+  const ref = useRef()
 
    useEffect(() => {
     if (isDescriptionVisible) {
@@ -56,13 +57,15 @@ function Calculator() {
     setTypeOfContent(e.target.value);
     setSubTypeOfContent(null);
     setFactors([]);
-    setIsCalculated(false)
+    setIsCalculated(false);
+    setPrice({ value: 0, label: null });
   }
 
   const handleSubTypeOfContentChange = (e) => {
     setSubTypeOfContent(e.value);
     setFactors([]);
     setIsCalculated(false);
+    setPrice({ value: 0, label: null });
   }
 
   const handleCalculatedIfValid = () => {
@@ -71,7 +74,6 @@ function Calculator() {
           setIsCalculated(true);
           window.scrollBy({left: 0,  top: 200, behavior: 'smooth'})
       } else {
-        alert('заполни поля');//TODO: implement error state of fields
         return
         }
     } else {
@@ -79,7 +81,6 @@ function Calculator() {
         setIsCalculated(true);
         window.scrollBy({left: 0,  top: 200, behavior: 'smooth'})
       } else {
-        alert('заполни поля');//TODO: implement error state of fields
         return
       }
     }
@@ -116,7 +117,7 @@ function Calculator() {
           {subTypeOfContent && subTypeOfContent !== subTypeOfContentConst.tiktokVideo &&
             <>
               <div className={s.formTitle}>{t('calculator.duration')}</div>
-              <Select isSearchable={false} styles={customStyles} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} onChange={(e) => setPrice(e)} />
+            <Select isSearchable={false} styles={customStyles} ref={ref} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} value={price} onChange={(e) => setPrice(e)} />
             </>   
           }
           {subTypeOfContent && 

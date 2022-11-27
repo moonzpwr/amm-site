@@ -34,6 +34,7 @@ export const useStyles = makeStyles({
     [BREAKPOINTS.DESKTOP]: {
       display: 'block',
       width: 575,
+      height: 501
     }
   },
   card: {

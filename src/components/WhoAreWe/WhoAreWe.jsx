@@ -54,7 +54,7 @@ function WhoAreWe() {
           :
           <img className={s.preview} src='https://i.ytimg.com/vi/7gRb2xhB4Ik/maxresdefault.jpg' alt='video_preview'/>
         }
-        {!isVideoClicked && <button type='button' className={s.videoBtn}><PlayIcon/></button>}
+        {!isVideoClicked && <button type='button' className={s.videoBtn} aria-label='play'><PlayIcon/></button>}
       </div>
     </div>
   );

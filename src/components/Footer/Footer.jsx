@@ -21,18 +21,18 @@ function Footer() {
   return (
     <div className={s.root} id='conacts'>
       <div className={s.separator}></div>
-      <a href='#root' className={s.logoIcon} ><Logo /></a>
+      <a href='#root' className={s.logoIcon} aria-label='link to the top of the page'><Logo /></a>
       <div className={s.adressContainer}>
         <p className={s.contacts}>{email}</p>
         <p className={s.contacts}>{tel}</p>
       </div>
       <ul className={s.socialmediaList}>
-        <li><a href='https://www.behance.net/ammprod1/projects' target='_blank' rel="noreferrer"><BehanceIcon className={s.icon} /></a></li>
-        <li><a href='https://www.linkedin.com/company/amm-production1/ ' target='_blank' rel="noreferrer"><LinkedinIcon className={s.icon} /></a></li>
-        <li><a href='https://www.youtube.com/channel/UCDpiH6JPPe3-FBqhRZG-96g' target='_blank' rel="noreferrer"><YoutubeIcon className={s.icon} /></a></li>
-        <li><a href='https://vimeo.com/user83807441' target='_blank' rel="noreferrer"><VimeoIcon /></a></li>
-        <li><a href='https://www.facebook.com/AMMProd1' target='_blank' rel="noreferrer"><FacebookIcon className={s.icon} /></a></li>
-        <li><a href='https://www.instagram.com/amm.prod1/' target='_blank' rel="noreferrer"><InstagramIcon className={s.icon} /></a></li>
+        <li><a href='https://www.behance.net/ammprod1/projects' target='_blank' rel="noreferrer" aria-label='link to the behance'><BehanceIcon className={s.icon} /></a></li>
+        <li><a href='https://www.linkedin.com/company/amm-production1/ ' target='_blank' rel="noreferrer" aria-label='link to the linkedin'><LinkedinIcon className={s.icon} /></a></li>
+        <li><a href='https://www.youtube.com/channel/UCDpiH6JPPe3-FBqhRZG-96g' target='_blank' rel="noreferrer" aria-label='link to the youtube'><YoutubeIcon className={s.icon} /></a></li>
+        <li><a href='https://vimeo.com/user83807441' target='_blank' rel="noreferrer" aria-label='link to the vimeo'><VimeoIcon /></a></li>
+        <li><a href='https://www.facebook.com/AMMProd1' target='_blank' rel="noreferrer" aria-label='link to the facebook'><FacebookIcon className={s.icon} /></a></li>
+        <li><a href='https://www.instagram.com/amm.prod1/' target='_blank' rel="noreferrer" aria-label='link to the instagram'><InstagramIcon className={s.icon} /></a></li>
       </ul>
       <p className={s.rights}>{t('footer.rights')}</p>
     </div>

@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
+import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
 export const useStyles = makeStyles({
@@ -25,7 +25,16 @@ export const useStyles = makeStyles({
     borderRight: '5px solid transparent',
     borderBottom: `5px solid ${COLORS.GREY.PRIMARY}`,
     borderLeft: `5px solid ${COLORS.GREY.PRIMARY}`,
-    animation: '$spin 0.5s infinite linear'
+    animation: '$spin 0.5s infinite linear',
+
+    [BREAKPOINTS.DESKTOP]: {
+      width: 80,
+      height: 80,
+      borderTop: '10px solid transparent',
+      borderRight: '10px solid transparent',
+      borderBottom: `10px solid ${COLORS.GREY.PRIMARY}`,
+      borderLeft: `10px solid ${COLORS.GREY.PRIMARY}`,
+    }
   },
 
   '@keyframes spin': {

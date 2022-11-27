@@ -1,6 +1,5 @@
 import { makeStyles } from '@mui/styles';
 import { BREAKPOINTS } from 'helpers/breakpoints';
-// import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
 
 export const useStyles = makeStyles({
@@ -63,12 +62,17 @@ export const useStyles = makeStyles({
     width: 80,
 
     [BREAKPOINTS.DESKTOP]: {
-      position: 'absolute',
-      width: 520,
-      height: 520,
-      top: 80,
-      right: -260,
+      display: 'none',
     }
+  },
+  pigLogoDesc: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
+      position: 'absolute',
+      right: 0,
+      display: 'block',
+    },
   },
   modalTitle: {
     textAlign: 'center',
@@ -125,6 +129,18 @@ export const useStyles = makeStyles({
     '&:hover, &:focus': {
       borderBottom: `1px solid ${COLORS.WHITE}`,
     }
+  },
+  errorState: {
+    '& input': {
+      borderBottom: `1px solid ${COLORS.RED.TOMATO}`,
+    },
+  },
+  error: {
+    color: COLORS.RED.TOMATO,
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: 400,
+    fontSize: 14,
+    lineHeight: '100%',
   },
   submitBtn: {
     height: 50,
@@ -215,11 +231,16 @@ export const useStyles = makeStyles({
     margin: '0 auto',
 
     [BREAKPOINTS.DESKTOP]: {
+      display: 'none'
+    }
+  },
+  foxLogoDesc: {
+    display: 'none',
+
+    [BREAKPOINTS.DESKTOP]: {
       position: 'absolute',
-      width: 520,
-      height: 520,
-      top: 80,
-      left: -260,
+      left: 0,
+      display: 'block'
     }
   },
   backdrop: {

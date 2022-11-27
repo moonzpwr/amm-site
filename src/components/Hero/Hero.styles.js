@@ -78,7 +78,7 @@ export const useStyles = makeStyles({
     backgroundColor: COLORS.WHITE,
     color: COLORS.BLACK.PRIMARY,
     cursor: 'pointer',
-    marginBottom: 150,
+    marginBottom: 90,
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
     animationDelay: '1.5s',
     '&:active': {
@@ -86,7 +86,7 @@ export const useStyles = makeStyles({
     },
 
     [BREAKPOINTS.DESKTOP]: {
-      marginBottom: 220,
+      marginBottom: 100,
       animationDelay: '4s',
     }
   },
@@ -98,7 +98,7 @@ export const useStyles = makeStyles({
     position: 'absolute',
     left: -25,
     bottom: 35,
-    width: 628,
+    width: '150% !important',
     height: 29,
     transform: 'rotate(-8deg)',
     backgroundColor: COLORS.BLACK.PRIMARY,
@@ -112,12 +112,10 @@ export const useStyles = makeStyles({
     whiteSpace: 'nowrap',
 
     [BREAKPOINTS.DESKTOP]: {
-      width: 1895,
       height: 31,
-      
       fontSize: 24,
       transform: 'rotate(-4deg)',
-      bottom: 90,
+      bottom: 20,
       animation: '$blackRibbonTextFadeIn 1s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
     }
   },
@@ -140,9 +138,9 @@ export const useStyles = makeStyles({
     alignItems: 'center',
     position: 'absolute',
     left: -30,
-    bottom: 20,
+    bottom: 55,
     transform: 'rotate(4deg)',
-    width: 628,
+    width: '150% !important',
     height: 29,
     backgroundColor: COLORS.WHITE,
     fontFamily: 'Roboto, sans-serif',
@@ -154,11 +152,10 @@ export const useStyles = makeStyles({
     zIndex: 4,
 
     [BREAKPOINTS.DESKTOP]: {
-      width: 1895,
       height: 31,
       fontSize: 24,
       transform: 'rotate(4deg)',
-      bottom: 30,
+      bottom: -10,
       animation: '$whiteRibbonTextFadeIn 1s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
     }
   },
