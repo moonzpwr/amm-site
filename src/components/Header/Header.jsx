@@ -28,7 +28,7 @@ function Header() {
       <a href='#root' aria-label='link to the top of the page'>
         <Logo className={s.logo} />
       </a>
-      <button className={s.menuBtn} onClick={() => setIsMenuOpen(true)}>
+      <button className={s.menuBtn} onClick={() => setIsMenuOpen(true)} aria-label='menu'>
         <Menu/>
       </button>
       <CSSTransition

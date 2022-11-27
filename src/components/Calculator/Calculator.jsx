@@ -138,7 +138,7 @@ function Calculator() {
           }
           {price.value !== 0 &&
             <button className={s.submitBtn} type='button' onClick={() => handleCalculatedIfValid()}>
-              {t('calculator.calculatorBtn')}
+              {t('calculator.btn')}
             </button>
           }
         </form>
@@ -153,7 +153,7 @@ function Calculator() {
             </p>
             <p>
               <span className={s.videoOptionsTitle}>{t('calculator.form')}:</span>
-              <span className={s.videoOptionsValue}>{t(`calculator.${typeOfContent === 'video' ? 'videoOption' : 'animationOtion '}.${subTypeOfContent}`)}</span>
+              <span className={s.videoOptionsValue}>{t(`calculator.${typeOfContent === 'video' ? 'videoOption' : 'animationOption'}.${subTypeOfContent}`)}</span>
             </p>
             <p>
               <span className={s.videoOptionsTitle}>{t('calculator.duration')}:</span>

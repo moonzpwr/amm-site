@@ -116,7 +116,7 @@
     "type": "Type",
     "duration": "Duration",
     "options": "Important options",
-    "calculatorBtn": "Calculate the price",
+    "btn": "Calculate the price",
     "disclaimerTitle": "is the estimated cost of your project.",
     "disclaimer": "This is an estimated price according to the parameters you specified. In reality, the price can be higher or lower, depending on your needs. For an individual calculation, leave your contact details and our manager will contact you.",
     "discussBtn": "Discuss the project",
@@ -127,7 +127,7 @@
       "youtubeVideo": "YouTube",
       "tiktokVideo": "Tik Tok"
     },
-    "animationOtion": {
+    "animationOption": {
       "vector2dAnimation": "2D vector",
       "perframe2dAnimation": "2D per frame",
       "photorealistic3dAnimation": "3D photorealistic graphics",

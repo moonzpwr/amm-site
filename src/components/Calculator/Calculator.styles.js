@@ -263,7 +263,6 @@ export const useStyles = makeStyles({
   videoOptionsValue: {
     width: 152,
     display: 'inline-block',
-    textTransform: 'capitalize',
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 400,
     fontSize: 16,
