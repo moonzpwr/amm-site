@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'utils/i18next';
 import Modal from 'components/Modal/Modal';
-import Marquee from "react-fast-marquee";
+// import Marquee from 'react-fast-marquee';
+import Marquee from "react-easy-marquee";
 
 function Hero() {
   const s = useStyles();
   const {t} = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   return (
     <div className={s.root}>
@@ -26,14 +28,14 @@ function Hero() {
         {t('title.mainBtn')}
       </button>
       <div className={s.ribbonContainer}>
-        <Marquee className={s.blackRibbon} gradient={false}>
+        <Marquee className={s.blackRibbon} duration={25000} background="#000" reverse height="30px">
           <span className={s.blackRibbonText}>
-           {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
+           {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
           </span>
         </Marquee>
-        <Marquee className={s.whiteRibbon} direction='right' gradient={false}>
+        <Marquee className={s.whiteRibbon} duration={25000} background="#fff" height="30px">
           <span className={s.whiteRibbonText}>
-            {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
+            {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
           </span>
         </Marquee> 
       </div>

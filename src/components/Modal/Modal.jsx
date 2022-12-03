@@ -29,7 +29,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
   const handleSubmitClick = (e) => {
     e.preventDefault();
     setIsDirty(true);
-    if (isNameValid && isPhoneValid && isEmailValid) {
+    if (isNameValid && isPhoneValid) {
       const formData = new FormData(myForm.current);
       fetch("/", {
         method: "POST",
