@@ -5,6 +5,11 @@ import { COLORS } from 'helpers/colors';
 export const useStyles = makeStyles({
   root: {
     margin: '0 auto 80px auto',
+    width: '100vw',
+
+    [BREAKPOINTS.DESKTOP]: {
+      maxWidth: 1170,
+    }
   },
   title: {
     fontFamily: 'Furore, sans-serif',
@@ -13,6 +18,7 @@ export const useStyles = makeStyles({
     lineHeight: '150%',
     textAlign: 'center',
     letterSpacing: '0.07em',
+    color: COLORS.WHITE
   },
   cardsContainer: {
     marginTop: 40,
@@ -42,6 +48,7 @@ export const useStyles = makeStyles({
     width: 280,
     padding: 16,
     backgroundColor: COLORS.BLACK.LIGHT,
+    color: COLORS.WHITE,
 
     '&:first-child': {
       display: 'none',

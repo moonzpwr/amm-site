@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'utils/i18next';
 import Modal from 'components/Modal/Modal';
-// import Marquee from 'react-fast-marquee';
-import Marquee from "react-easy-marquee";
+// import Marquee from "react-easy-marquee";
 
 function Hero() {
   const s = useStyles();
@@ -27,7 +26,7 @@ function Hero() {
       <button className={s.modalBtn} onClick={() => setIsModalOpen(true)}>
         {t('title.mainBtn')}
       </button>
-      <div className={s.ribbonContainer}>
+      {/* <div className={s.ribbonContainer}>
         <Marquee className={s.blackRibbon} duration={25000} background="#000" reverse height="30px">
           <span className={s.blackRibbonText}>
            {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
@@ -38,7 +37,7 @@ function Hero() {
             {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')} {t('title.ribbonAd')}&nbsp;
           </span>
         </Marquee> 
-      </div>
+      </div> */}
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );

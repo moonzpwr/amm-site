@@ -50,7 +50,11 @@ export const useStyles = makeStyles({
     }
   },
   icon: {
-    fill: COLORS.WHITE
+    fill: COLORS.GREY.LIGHT,
+
+    '&:hover': {
+      fill: COLORS.WHITE
+    }
   },
   socialmediaList: {
     display: 'flex',

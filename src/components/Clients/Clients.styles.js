@@ -101,7 +101,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client1x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -115,7 +115,7 @@ export const useStyles = makeStyles({
         background: `url(${client1x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -143,7 +143,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client2x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -157,7 +157,7 @@ export const useStyles = makeStyles({
         background: `url(${client2x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -185,7 +185,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client3x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -199,7 +199,7 @@ export const useStyles = makeStyles({
         background: `url(${client3x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -227,7 +227,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client4x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -241,7 +241,7 @@ export const useStyles = makeStyles({
         background: `url(${client4x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -269,7 +269,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client5x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -283,7 +283,7 @@ export const useStyles = makeStyles({
         background: `url(${client5x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -311,7 +311,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client6x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -325,7 +325,7 @@ export const useStyles = makeStyles({
         background: `url(${client6x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -353,7 +353,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client7x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -367,7 +367,7 @@ export const useStyles = makeStyles({
         background: `url(${client7x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -395,7 +395,7 @@ export const useStyles = makeStyles({
         height: '100%',
         background: `url(${client8x2b})`,
         backgroundSize: 'cover',
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&::before': {
@@ -409,7 +409,7 @@ export const useStyles = makeStyles({
         background: `url(${client8x2})`,
         backgroundSize: 'cover',
         opacity: 0,
-        transition: 'all 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)'
+        transition: 'all cubic-bezier(0.390, 0.575, 0.565, 1.000)'
       },
   
       '&:hover::before': {
@@ -423,25 +423,25 @@ export const useStyles = makeStyles({
   },
   titleAnimation:{
     [BREAKPOINTS.DESKTOP]: {
-      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animation: '$fadeIn cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       animationDelay: '0.5s',
     }
   },
   clutchAnimation:{
     [BREAKPOINTS.DESKTOP]: {
-      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animation: '$fadeIn cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       animationDelay: '1s',
     }
   },
   firstRowAnimation: {
     [BREAKPOINTS.DESKTOP]: {
-      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animation: '$fadeIn cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       animationDelay: '1.5s',
     }
   },
   secondRowAnimation: {
     [BREAKPOINTS.DESKTOP]: {
-      animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+      animation: '$fadeIn cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       animationDelay: '2s',
     }
   },

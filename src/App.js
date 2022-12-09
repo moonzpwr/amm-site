@@ -22,7 +22,9 @@ function App() {
         <Hero/>
         <WhoAreWe/>
         <Features/>
-        <OurProducts/>
+      </Layout>
+      <OurProducts/>
+      <Layout>
         <Calculator/>
         <WorkProcess/>
         <Case/>

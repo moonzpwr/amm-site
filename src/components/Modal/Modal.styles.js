@@ -28,6 +28,12 @@ export const useStyles = makeStyles({
       overflow: 'hidden',
     }
   },
+  successModal: {
+    [BREAKPOINTS.DESKTOP]: {
+      width: 812,
+      height: 558,
+    }
+  },
   modalContainer: {
     backgroundColor: COLORS.BLACK.PRIMARY,
     width: 288,
@@ -116,6 +122,9 @@ export const useStyles = makeStyles({
     fontSize: 18,
     lineHeight: '150%',
     color: COLORS.WHITE,
+    '-webkit-appearance': 'none',
+    '-webkit-border-radius':'0px',
+    outline: 'none',
     
     '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {
       display: 'none',
@@ -173,7 +182,7 @@ export const useStyles = makeStyles({
     fontWeight: 400,
     fontSize: 22,
     lineHeight: '150%',
-    marginTop: 40,
+    marginTop: 80,
 
     [BREAKPOINTS.DESKTOP]: {
       fontSize: 36,

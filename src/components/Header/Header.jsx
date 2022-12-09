@@ -34,7 +34,7 @@ function Header() {
       <CSSTransition
         in={isMenuOpen}
         unmountOnExit
-        timeout={250 }
+        timeout={250}
         classNames='menu'
       >
         <div className={classNames(s.mobileMenu)}> 

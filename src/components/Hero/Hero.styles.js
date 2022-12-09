@@ -6,7 +6,12 @@ export const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    position: 'relative'
+    position: 'relative',
+    marginTop: 108,
+
+    [BREAKPOINTS.DESKTOP]: {
+      marginTop: 0,
+    }
   },
   name: {
     fontFamily: 'Furore, sans-serif',
@@ -48,6 +53,7 @@ export const useStyles = makeStyles({
     fontSize: 25,
     width: 320,
     letterSpacing: '0.07em',
+    lineHeight: '36px',
   },
   subTitle: {
     margin: '28px 0 110px 0',
@@ -81,6 +87,9 @@ export const useStyles = makeStyles({
     marginBottom: 90,
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
     animationDelay: '1.5s',
+    '&:hover': {
+      border: `2px solid ${COLORS.WHITE}`
+    },
     '&:active': {
       backgroundColor: COLORS.GREY.LIGHT
     },

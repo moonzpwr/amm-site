@@ -13,6 +13,8 @@ import Modal from 'components/Modal/Modal';
 import { useInView } from 'react-intersection-observer';
 import calculatorPhoto from 'assets/images/calculatorPhoto.jpg'
 import classNames from 'classnames';
+import {Option} from './components/Options'
+
 
 function Calculator() {
   const s = useStyles();
@@ -83,8 +85,7 @@ function Calculator() {
       } else {
         return
       }
-    }
-    
+    } 
   }
   
   return (
@@ -117,10 +118,10 @@ function Calculator() {
           {subTypeOfContent && subTypeOfContent !== subTypeOfContentConst.tiktokVideo &&
             <>
               <div className={s.formTitle}>{t('calculator.duration')}</div>
-            <Select isSearchable={false} styles={customStyles} ref={ref} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} value={price} onChange={(e) => setPrice(e)} />
+              <Select isSearchable={false} styles={customStyles} ref={ref} options={get(durationOptions, subTypeOfContent )} placeholder={t('calculator.formPlaceholderDuration')} value={price.value} onChange={(e) => setPrice(e.value)} />
             </>   
           }
-          {subTypeOfContent && 
+          {subTypeOfContent && price.value !== 0 &&
             <>
               <div className={s.formTitle}>{t('calculator.options')}</div>
               <Select
@@ -128,11 +129,13 @@ function Calculator() {
                 styles={customStyles}
                 options={get(importantOptions, subTypeOfContent)}
                 isMulti
+                hideSelectedOptions={false}
                 closeMenuOnSelect={false}
                 blurInputOnSelect={false}
                 placeholder={t('calculator.formPlaceholderOptions')}
                 value={factors}
                 onChange={(e) => setFactors(e)}
+                components={{ Option }}
               />
             </>
           }

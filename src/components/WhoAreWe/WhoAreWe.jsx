@@ -50,7 +50,7 @@ function WhoAreWe() {
       </div>
       <div className={s.video} onClick={() => setIsVideoClicked(true)}>
         {isVideoClicked ?
-          <iframe src='https://www.youtube.com/embed/7gRb2xhB4Ik' className={s.preview} width={320} height={190} title='video'></iframe>
+          <iframe src='https://www.youtube.com/embed/7gRb2xhB4Ik' className={s.preview} width={320} height={190} title='video' allowFullScreen></iframe>
           :
           <img className={s.preview} src='https://i.ytimg.com/vi/7gRb2xhB4Ik/maxresdefault.jpg' alt='video_preview'/>
         }

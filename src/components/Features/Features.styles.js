@@ -1,7 +1,12 @@
 import { makeStyles } from '@mui/styles';
 import { BREAKPOINTS } from 'helpers/breakpoints';
 import { COLORS } from 'helpers/colors';
-import cardBg from 'assets/images/cardBg.jpg'
+import cardBgOne from 'assets/images/cardBgOne.png'
+import cardBgTwo from 'assets/images/cardBgTwo.png'
+import cardBgThree from 'assets/images/cardBgThree.png'
+import cardBgFour from 'assets/images/cardBgFour.png'
+import cardBgFifth from 'assets/images/cardBgFifth.png'
+import cardBgSix from 'assets/images/cardBgSix.png'
 
 export const useStyles = makeStyles({
   root: {
@@ -79,6 +84,7 @@ export const useStyles = makeStyles({
     display: 'flex',
     gap: 20,
     padding: 18,
+    overflow: 'hidden',
 
     [BREAKPOINTS.DESKTOP]: {
       zIndex: 2,
@@ -99,7 +105,6 @@ export const useStyles = makeStyles({
         left: 0,
         zIndex: -1,
         transition: 'opacity 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000)',
-        background: `url(${cardBg})`,
       },
 
       '&::before': {
@@ -123,6 +128,36 @@ export const useStyles = makeStyles({
       '&:hover::after': {
         opacity: 1,
       },
+    }
+  },
+  firstCard: {
+    '&::after': {
+      background: `url(${cardBgOne})`,
+    }
+  },
+  secondCard: {
+    '&::after': {
+      background: `url(${cardBgTwo})`,
+    }
+  },
+  thirdCard: {
+    '&::after': {
+      background: `url(${cardBgThree})`,
+    }
+  },
+  fourthCard: {
+    '&::after': {
+      background: `url(${cardBgFour})`,
+    }
+  },
+  fifthCard: {
+    '&::after': {
+      background: `url(${cardBgFifth})`,
+    }
+  },
+  sixthCard: {
+    '&::after': {
+      background: `url(${cardBgSix})`,
     }
   },
   describeAnimation: {

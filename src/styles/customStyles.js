@@ -4,10 +4,11 @@ export const customStyles = {
   control: (provided, state) => ({
     ...provided,
     width: '100%',
-    border: 'none',
+    border: 0,
+    boxShadow: state.isFocused ? 0 : 0,
     borderRadius: 0,
     marginBottom: 40,
-    borderBottom: state.isFocused ? `1px solid ${COLORS.WHITE}` : `1px solid ${COLORS.GREY.PRIMARY}`,
+    borderBottom: state.isFocused ? `1px solid ${COLORS.WHITE} !important` : `1px solid ${COLORS.GREY.PRIMARY} !important`,
     backgroundColor: COLORS.BLACK.PRIMARY,
   }),
   singleValue: (provided, state) => ({
@@ -17,6 +18,7 @@ export const customStyles = {
     fontWeight: 400,
     fontSize: 16,
     lineHeight: '150%',
+    backgroundColor: state.isFocused ? COLORS.BLACK.LIGHT : 'transparent',
   }),
   valueContainer: (provided) => ({
     ...provided,
@@ -43,18 +45,23 @@ export const customStyles = {
     ...provided,
     padding: '21px 16px',
     fontFamily: 'Roboto, sans-serif',
+    borderRadius: 0,
     fontWeight: 400,
     fontSize: 14,
     backgroundColor: state.isFocused ? COLORS.BLACK.LIGHT : 'transparent',
+    display: 'flex',
+    alignItems: 'flex-start'
   }),
   menu: (provided) => ({
     ...provided,
     width: '100%',
+    borderRadius: 0,
     backgroundColor: COLORS.BLACK.PRIMARY,
     overflow: 'hidden',
   }),
   multiValue: (provided) => ({
     ...provided,
+    borderRadius: 0,
     color: COLORS.WHITE,
     backgroundColor: COLORS.BLACK.PRIMARY,
     fontFamily: 'Roboto, sans-serif',
@@ -63,5 +70,8 @@ export const customStyles = {
     '& div': {
       color: COLORS.WHITE,
     }
-  })
+  }),
+  multiValueRemove: () => ({
+    display: 'none',
+  }),
 }

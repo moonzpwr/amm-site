@@ -73,7 +73,7 @@ function ContactForm() {
             </label>
             <label>
               <span>{t("contactModal.phoneNumber")}</span>
-              <input type="number" className={s.contactInput} autoComplete="off" name='phone' placeholder={t('contactModal.phoneNumberPlaceholder')} value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <input type="number" className={s.contactInput} autoComplete="off" name='phone' placeholder='+380' value={phone} onChange={(e) => setPhone(e.target.value)} />
               {!isPhoneValid && isDirty && <span className={s.error}>{t("error")}</span>}
             </label>
             <label>

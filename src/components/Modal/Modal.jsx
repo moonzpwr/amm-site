@@ -74,7 +74,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
         timeout={250}
         classNames='modal'
       >
-        <div className={s.contactsModal}>
+        <div className={classNames(s.contactsModal, {[s.successModal]: isSubmited})}>
           {isSubmited ?
             <div className={s.successfullForm}>
               <h2 className={s.successTitle}>{t("contactModal.successTitle")}</h2>
@@ -98,7 +98,7 @@ function Modal({isModalOpen, setIsModalOpen}) {
                 </label>
                 <label className={classNames({[s.errorState]: !isPhoneValid && isDirty})}>
                   <span>{ t("contactModal.phoneNumber") }</span>
-                  <input required type="number" autoComplete="off" className={s.contactInput} name='phone' placeholder={t('contactModal.phoneNumberPlaceholder')} value={phone} onChange={(e) => setPhone(e.target.value)} />
+                  <input required type="number" autoComplete="off" className={s.contactInput} name='phone' placeholder='+380' value={phone} onChange={(e) => setPhone(e.target.value)} />
                   {!isPhoneValid && isDirty && <span className={s.error}>{t("error")}</span>}
                 </label>
                 <label className={classNames({[s.errorState]: !isEmailValid && isDirty})}>

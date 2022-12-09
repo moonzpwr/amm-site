@@ -62,12 +62,15 @@ export const useStyles = makeStyles({
   },
   contactInput: {
     border: 'none',
+    outline: 'none',
     padding: 15,
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 400,
     fontSize: 18,
     lineHeight: '150%',
     color: COLORS.WHITE,
+    '-webkit-border-radius': 0,
+    '-webkit-appearance': 'none',
 
     borderBottom: `1px solid ${COLORS.GREY.PRIMARY}`,
     backgroundColor: COLORS.BLACK.PRIMARY,
@@ -102,6 +105,7 @@ export const useStyles = makeStyles({
   submitBtn: {
     height: 50,
     fontFamily: 'Roboto, sans-serif',
+    padding: '16px 36px',
     fontWeight: 700,
     fontSize: 18,
     lineHeight: '100%',
@@ -109,6 +113,10 @@ export const useStyles = makeStyles({
     backgroundColor: COLORS.WHITE,
     color: COLORS.BLACK.PRIMARY,
     cursor: 'pointer',
+
+    '&:hover': {
+      border: `2px solid ${COLORS.WHITE}`
+    },
 
     '&:active': {
       backgroundColor: COLORS.GREY.LIGHT

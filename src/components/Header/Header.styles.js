@@ -119,7 +119,7 @@ export const useStyles = makeStyles({
     [BREAKPOINTS.DESKTOP]: {
       marginBottom: 0,
       cursor: 'pointer',
-      width: 200,
+      padding: 0,
       '&:hover': {
         borderBottom: `1px solid ${COLORS.WHITE}`
       }
@@ -128,10 +128,6 @@ export const useStyles = makeStyles({
   btnContainer: {
     display: 'flex',
     alignItems: 'center',
-
-    [BREAKPOINTS.DESKTOP]: {
-      // marginRight: 96,
-    }
   },
   separator: {
     margin: '0 10px',
@@ -155,8 +151,8 @@ export const useStyles = makeStyles({
   },
   closeBtn: {
     position: 'absolute',
-    top: 24,
-    left: 20,
+    top: 37,
+    left: 24,
     border: 'none',
     padding: 0,
     backgroundColor: 'transparent'
