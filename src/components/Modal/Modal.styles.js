@@ -131,6 +131,14 @@ export const useStyles = makeStyles({
       appearance: 'none',
       margin: 0,
     },
+    
+    '&::-webkit-contacts-auto-fill-button': {
+      visibility: 'hidden',
+      display: 'none !important',
+      pointerEvents: 'none',
+      position: 'absolute',
+      right: 0,
+    },
 
     borderBottom: `1px solid ${COLORS.GREY.PRIMARY}`,
     backgroundColor: COLORS.BLACK.PRIMARY,

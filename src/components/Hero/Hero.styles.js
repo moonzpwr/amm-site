@@ -38,7 +38,7 @@ export const useStyles = makeStyles({
       width: 1000,
       margin: '140px auto 0 auto',
       animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-      animationDelay: '3s',
+      animationDelay: '0.5s',
       fontFamily: 'Furore, sans-serif',
       fontWeight: 400,
       fontSize: 60,
@@ -69,7 +69,7 @@ export const useStyles = makeStyles({
       lineHeight: '150%',
       textAlign: 'center',
       margin: '20px 0 40px 0',
-      animationDelay: '3.5s',
+      animationDelay: '1.5s',
     }
   },
   modalBtn: {
@@ -96,7 +96,7 @@ export const useStyles = makeStyles({
 
     [BREAKPOINTS.DESKTOP]: {
       marginBottom: 100,
-      animationDelay: '4s',
+      animationDelay: '2s',
     }
   },
   ribbonContainer: {

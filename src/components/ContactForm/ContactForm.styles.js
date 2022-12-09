@@ -82,7 +82,15 @@ export const useStyles = makeStyles({
     '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
       '-webkit-appearance': 'none',
       margin: 0,
-    }
+    },
+
+    '&::-webkit-contacts-auto-fill-button': {
+      visibility: 'hidden',
+      display: 'none !important',
+      pointerEvents: 'none',
+      position: 'absolute',
+      right: 0,
+    },
   },
   errorState: {
     '& input': {
