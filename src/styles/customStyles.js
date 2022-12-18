@@ -43,14 +43,14 @@ export const customStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    padding: '21px 16px',
+    padding: '15px 16px',
     fontFamily: 'Roboto, sans-serif',
     borderRadius: 0,
     fontWeight: 400,
     fontSize: 14,
     backgroundColor: state.isFocused ? COLORS.BLACK.LIGHT : 'transparent',
     display: 'flex',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   }),
   menu: (provided) => ({
     ...provided,
@@ -58,6 +58,9 @@ export const customStyles = {
     borderRadius: 0,
     backgroundColor: COLORS.BLACK.PRIMARY,
     overflow: 'hidden',
+    '& div:active': {
+      backgroundColor: COLORS.BLACK.LIGHT,
+    }
   }),
   multiValue: (provided) => ({
     ...provided,

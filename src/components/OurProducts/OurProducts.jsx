@@ -27,6 +27,7 @@ function OurProducts() {
         <div className={classNames(s.card, {[s.firstCardAnimation]: isBlockShown})}>
           <img src={studioDescImg} alt='studio foto' className={s.desctopFoto}></img>
         </div>
+        <div className={s.mobilePlaseholder}></div>
         <div className={classNames(s.card, {[s.secondaCardAnimation]: isBlockShown})}>
           <h3 className={s.cardTitle}><span className={s.line}>/</span>{t('products.firstCard.title')}</h3>
           <ul className={s.carlList}>
@@ -65,6 +66,7 @@ function OurProducts() {
             <li className={s.listItem}><StarIcon/>{t('products.thirdCard.sixthItem')}</li>
           </ul>
         </div>
+        <div className={s.mobilePlaseholder}></div>
       </div>
       <img src={studioImg} alt='studio foto' className={s.studioFoto}></img>
     </div>

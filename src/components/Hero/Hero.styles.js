@@ -74,6 +74,7 @@ export const useStyles = makeStyles({
   },
   modalBtn: {
     height: 50,
+    width: 229,
     fontFamily: 'Roboto, sans-serif',
     padding: '16px 36px',
     alignSelf: 'center',
@@ -88,7 +89,7 @@ export const useStyles = makeStyles({
     animation: '$fadeIn 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
     animationDelay: '1.5s',
     '&:hover': {
-      border: `2px solid ${COLORS.WHITE}`
+      outline: '2px solid white'
     },
     '&:active': {
       backgroundColor: COLORS.GREY.LIGHT

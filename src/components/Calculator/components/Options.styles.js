@@ -14,6 +14,8 @@ export const useStyles = makeStyles({
     padding: '0 0 0 35px',
     cursor: 'pointer',
     userSelect: 'none',
+    margin: 0,
+    lineHeight: '24px',
 
     '& input': {
       position: 'absolute',

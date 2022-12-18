@@ -25,7 +25,7 @@ function Calculator() {
   const {videoSelectOptions, animationSelectOptions} = useTypeOfContentOptions();
   const [typeOfContent, setTypeOfContent] = useState('video');
   const [subTypeOfContent, setSubTypeOfContent] = useState(null);
-  const [price, setPrice] = useState({value: 0, label: null});
+  const [price, setPrice] = useState(0);
   const [factors, setFactors] = useState([]);
   const [finalPrice, setFinalprice] = useState(0)
   const [isCalculated, setIsCalculated] = useState(false);
@@ -33,7 +33,12 @@ function Calculator() {
   const { ref: titleRef, inView: isTitleVisible } = useInView();
   const [isTitleShown, setIsTitleShown] = useState(false);
   const [isDescriptionlShown, setIsDescriptionShown] = useState(false);
-  const ref = useRef()
+  const ref = useRef();
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  }
 
    useEffect(() => {
     if (isDescriptionVisible) {
@@ -50,10 +55,10 @@ function Calculator() {
       setPrice({value: 1000, label: null})
     }
     setFinalprice(factors.reduce((acc, factor) => {
-      acc += (Number(factor.value.slice(0, 3)) * price.value) - price.value
+      acc += (Number(factor.value.slice(0, 3)) * price) - price
       return acc
-    }, price.value))
-  }, [subTypeOfContent, price.value, factors])
+    }, price))
+  }, [subTypeOfContent, price, factors])
 
   const handleContentTypeClick = (e) => {
     setTypeOfContent(e.target.value);
@@ -79,7 +84,7 @@ function Calculator() {
         return
         }
     } else {
-      if (subTypeOfContent && price.label && finalPrice !== 0) {
+      if (subTypeOfContent && price !== 0 && finalPrice !== 0) {
         setIsCalculated(true);
         window.scrollBy({left: 0,  top: 200, behavior: 'smooth'})
       } else {
@@ -139,8 +144,8 @@ function Calculator() {
               />
             </>
           }
-          {price.value !== 0 &&
-            <button className={s.submitBtn} type='button' onClick={() => handleCalculatedIfValid()}>
+          {price !== 0 &&
+            <button className={s.submitBtn} type='button' onClick={handleCalculatedIfValid}>
               {t('calculator.btn')}
             </button>
           }
@@ -173,7 +178,7 @@ function Calculator() {
               <div className={s.disclaimerTitleDesctop}>{t('calculator.disclaimerTitle')}</div>
             </div>
             <div className={s.videoDisclaimer}>{t('calculator.disclaimer')}</div>
-            <button className={s.modalBtn} onClick={() => setIsModalOpen(true)}>
+            <button className={s.modalBtn} onClick={handleModalOpen}>
               {t('title.mainBtn')}
             </button>
           </div>

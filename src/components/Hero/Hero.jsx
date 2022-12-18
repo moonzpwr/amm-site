@@ -10,6 +10,10 @@ function Hero() {
   const {t} = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const handleOpenModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  }
 
   return (
     <div className={s.root}>
@@ -23,7 +27,7 @@ function Hero() {
         {t('title.name')} {t('title.title')}
       </div>
       <div className={s.subTitle}>{t('title.subTitle')}</div>
-      <button className={s.modalBtn} onClick={() => setIsModalOpen(true)}>
+      <button className={s.modalBtn} onClick={handleOpenModal}>
         {t('title.mainBtn')}
       </button>
       {/* <div className={s.ribbonContainer}>

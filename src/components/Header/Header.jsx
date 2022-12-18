@@ -19,8 +19,23 @@ function Header() {
   }
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleOpenMenu = () => {
+    setIsMenuOpen(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = 'auto';
+  }
+
   const handleLinkClick = () => {
     setIsMenuOpen(false)
+  }
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   return (
@@ -28,7 +43,7 @@ function Header() {
       <a href='#root' aria-label='link to the top of the page'>
         <Logo className={s.logo} />
       </a>
-      <button className={s.menuBtn} onClick={() => setIsMenuOpen(true)} aria-label='menu'>
+      <button className={s.menuBtn} onClick={handleOpenMenu} aria-label='menu'>
         <Menu/>
       </button>
       <CSSTransition
@@ -52,7 +67,7 @@ function Header() {
             <div className={s.separator}></div>
             <button onClick={() => handleChangeLanguage('en')} className={s.langBtn}>EN</button>
           </div>
-          <button className={s.closeBtn} onClick={() => setIsMenuOpen(false)}>
+          <button className={s.closeBtn} onClick={handleCloseMenu}>
             <CloseIcon/>
           </button>
         </div>
@@ -69,7 +84,7 @@ function Header() {
           <div className={s.separator}></div>
           <button onClick={() => handleChangeLanguage('en')} className={s.langBtn}>EN</button>
         </div>
-        <button className={s.contactBtn} onClick={() => setIsModalOpen(true)}>
+        <button className={s.contactBtn} onClick={handleOpenModal}>
           {t("header.contactUs")}<ArrowRightUp />
         </button>
       </div>

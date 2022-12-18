@@ -51,6 +51,10 @@ export const useStyles = makeStyles({
     padding: '0 1px',
     marginBottom: 55, 
     justifyContent: 'space-between',
+
+    '& div:active': {
+      backgroundColor: COLORS.BLACK.LIGHT,
+    },
   },
   calculatorForm: {
     marginBottom: 130,
@@ -302,6 +306,8 @@ export const useStyles = makeStyles({
   },
   modalBtn: {
     height: 50,
+    width: '100%',
+    marginTop: 28,
     fontFamily: 'Roboto, sans-serif',
     padding: '16px 36px',
     alignSelf: 'center',
@@ -315,7 +321,12 @@ export const useStyles = makeStyles({
     margin: '0 auto',
     animationDelay: '1.5s',
     '&:active': {
-      backgroundColor: COLORS.GREY.LIGHT
+      backgroundColor: COLORS.GREY.LIGHT,
+    },
+
+    [BREAKPOINTS.DESKTOP]: {
+      marginTop: 0,
+      width: 'auto',
     }
   },
 });

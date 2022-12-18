@@ -30,8 +30,8 @@ export const useStyles = makeStyles({
   },
   successModal: {
     [BREAKPOINTS.DESKTOP]: {
-      width: 812,
       height: 558,
+      width: 960,
     }
   },
   modalContainer: {
@@ -61,7 +61,7 @@ export const useStyles = makeStyles({
     [BREAKPOINTS.DESKTOP]: {
       width: 492,
       height: 333,
-      margin: '112px 80px 113px auto'
+      margin: '112px 145px 113px auto'
     }
   },
   pigLogo: {

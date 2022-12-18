@@ -11,6 +11,12 @@ export const useStyles = makeStyles({
       maxWidth: 1170,
     }
   },
+  mobilePlaseholder: {
+    padding:10,
+    [BREAKPOINTS.DESKTOP]: {
+      display: 'none'
+    }
+  },
   title: {
     fontFamily: 'Furore, sans-serif',
     fontWeight: 400,
@@ -18,8 +24,11 @@ export const useStyles = makeStyles({
     lineHeight: '150%',
     textAlign: 'center',
     letterSpacing: '0.07em',
-    color: COLORS.WHITE
-  },
+    color: COLORS.WHITE,
+    [BREAKPOINTS.DESKTOP]: {
+      fontSize: 36,
+    },
+  }, 
   cardsContainer: {
     marginTop: 40,
     minWidth: '100%',

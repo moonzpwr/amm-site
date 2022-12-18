@@ -36,8 +36,6 @@ function Features() {
       <p className={classNames(s.describe, {[s.describeAnimation]: isLabelShown})}>{t('ourFeatures.subTitle')}</p>
       <ul className={s.featuresList}>
         <li className={classNames(s.featuresItem, s.firstCard, { [s.featuresItemFirstAnimation]: isLabelShown })}>
-          <div className={s.elinseOne}></div>
-          <div className={s.elipseTwo}></div>
           <div className={s.featuresIconContainer}>
             <TransferIcon/>
           </div>
