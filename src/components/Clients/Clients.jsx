@@ -44,7 +44,7 @@ function Clients() {
         <li className={classNames(s.clientEight, {[s.secondRowAnimation]: setIsTitleShown})}><img className={s.clientsImg} src={client8} alt="client_image-8"></img></li>
       </ul>
       <p className={classNames(s.clutch, {[s.clutchAnimation]: isTitlelShown})}>{t('clients.clutch')}</p>
-      <a href='https://clutch.co/' target='_blank' rel="noreferrer" className={classNames(s.clutchLink, {[s.clutchAnimation]: isTitlelShown})}>
+      <a href='https://clutch.co/profile/amm#summary' target='_blank' rel="noreferrer" className={classNames(s.clutchLink, {[s.clutchAnimation]: isTitlelShown})}>
         <img src={clutch} alt="clutch_link"></img>
       </a>
     </div>
