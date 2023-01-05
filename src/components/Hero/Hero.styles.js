@@ -74,7 +74,7 @@ export const useStyles = makeStyles({
   },
   modalBtn: {
     height: 50,
-    width: 229,
+    width: 237,
     fontFamily: 'Roboto, sans-serif',
     padding: '16px 36px',
     alignSelf: 'center',
