@@ -53,7 +53,22 @@ export const useStyles = makeStyles({
     fill: COLORS.GREY.LIGHT,
 
     '&:hover': {
-      fill: COLORS.WHITE
+      fill: COLORS.WHITE,
+    }
+  },
+  newIconContainer: {
+    width: 24,
+    paddingTop: 2,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  newIcon: {
+    stroke: COLORS.GREY.LIGHT,
+    width: 19.5,
+    height: 19.5,
+
+    '&:hover': {
+      stroke:COLORS.WHITE,
     }
   },
   socialmediaList: {
